@@ -1,0 +1,110 @@
+Seed not set for the environment. The environment creation may not be deterministic.
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: 66RFR76U
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 51, path: "/tmp/hub-grasploop.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-grasploop-2280E7F1.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-grasploop-2280E7F1.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/home/grasploop/workspace/isaaclab-3.0.0-ga/source/isaaclab_newton/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 15.921429 s, Mean: 15.921429 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 3.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/GroundPlane']
+	Replicate physics     : True
+Finalize builder took: Last: 1.823065 s, Mean: 1.823065 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.261286 s, Mean: 0.261286 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000607 s, Mean: 0.130947 s, Std: 0.184327 s, N: 2
+Initialize solver took: Last: 24.640764 s, Mean: 24.640764 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 50.962516 s, Mean: 50.962516 s, Std: 0.000000 s, N: 1
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------------+-----------------------+
+|    Index    | Name                  |
++-------------+-----------------------+
+|      0      | reset_all             |
++-------------+-----------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 8)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         7 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 1 groups.
++-----------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (9,)) |
++---------------+--------------------------+----------------+
+|     Index     | Name                     |     Shape      |
++---------------+--------------------------+----------------+
+|       0       | joint_pos                |      (9,)      |
++---------------+--------------------------+----------------+
+
+CUDA graph took: Last: 0.399873 s, Mean: 0.399873 s, Std: 0.000000 s, N: 1
+[grid] cube seed 100 scripted: PASS in 1 attempt(s), $0.0000, 56.1 s
+[grid] cube seed 100 oneshot : PASS in 1 attempt(s), $0.0016, 26.8 s
+[grid] cube seed 100 rerun   : PASS in 1 attempt(s), $0.0000, 3.2 s
+[grid] cube seed 100 physics : PASS in 1 attempt(s), $0.0023, 36.8 s
+[grid] cube seed 100 vision  : PASS in 2 attempt(s), $0.0061, 81.5 s
+[grid] cube seed 101 scripted: PASS in 1 attempt(s), $0.0000, 4.0 s
+[grid] cube seed 101 oneshot : PASS in 1 attempt(s), $0.0026, 40.8 s
+[grid] cube seed 101 rerun   : PASS in 1 attempt(s), $0.0000, 4.2 s
+[grid] cube seed 101 physics : PASS in 2 attempt(s), $0.0047, 75.5 s
+[grid] cube seed 101 vision  : PASS in 1 attempt(s), $0.0022, 35.1 s
+[grid] cube seed 102 scripted: PASS in 1 attempt(s), $0.0000, 4.8 s
+[grid] cube seed 102 oneshot : fail in 1 attempt(s), $0.0055, 84.2 s
+[grid] cube seed 102 rerun   : fail in 3 attempt(s), $0.0000, 10.2 s
+[grid] cube seed 102 physics : PASS in 1 attempt(s), $0.0007, 13.4 s
+[grid] cube seed 102 vision  : PASS in 1 attempt(s), $0.0015, 24.9 s
+[grid] cube seed 103 scripted: PASS in 1 attempt(s), $0.0000, 4.6 s
+[grid] cube seed 103 oneshot : fail in 1 attempt(s), $0.0013, 20.7 s
+[grid] cube seed 103 rerun   : fail in 3 attempt(s), $0.0000, 9.4 s
+[grid] cube seed 103 physics : PASS in 2 attempt(s), $0.0036, 54.1 s
+[grid] cube seed 103 vision  : fail in 3 attempt(s), $0.0180, 246.3 s
+[grid] cube seed 104 scripted: PASS in 1 attempt(s), $0.0000, 4.6 s
+[grid] cube seed 104 oneshot : PASS in 1 attempt(s), $0.0007, 31.9 s
+[grid] cube seed 104 rerun   : PASS in 1 attempt(s), $0.0000, 3.7 s
+[grid] cube seed 104 physics : PASS in 1 attempt(s), $0.0011, 34.5 s
+[grid] cube seed 104 vision  : PASS in 1 attempt(s), $0.0010, 17.9 s
+[grid] cube seed 105 scripted: PASS in 1 attempt(s), $0.0000, 4.6 s
+[grid] cube seed 105 oneshot : PASS in 1 attempt(s), $0.0009, 17.6 s
+[grid] cube seed 105 rerun   : PASS in 1 attempt(s), $0.0000, 3.5 s
+[grid] cube seed 105 physics : PASS in 1 attempt(s), $0.0025, 39.4 s
+[grid] cube seed 105 vision  : PASS in 3 attempt(s), $0.0065, 79.2 s
+[grid] cube seed 106 scripted: PASS in 1 attempt(s), $0.0000, 4.1 s
+[grid] cube seed 106 oneshot : PASS in 1 attempt(s), $0.0006, 12.0 s
+[grid] cube seed 106 rerun   : PASS in 1 attempt(s), $0.0000, 3.4 s
+[grid] cube seed 106 physics : fail in 3 attempt(s), $0.0105, 192.0 s
+[grid] cube seed 106 vision  : PASS in 1 attempt(s), $0.0018, 37.9 s
+[grid] cube seed 107 scripted: PASS in 1 attempt(s), $0.0000, 4.1 s
+[grid] cube seed 107 oneshot : PASS in 1 attempt(s), $0.0022, 69.1 s
+[grid] cube seed 107 rerun   : PASS in 1 attempt(s), $0.0000, 3.7 s
+[grid] cube seed 107 physics : PASS in 2 attempt(s), $0.0030, 57.3 s
+[grid] cube seed 107 vision  : PASS in 2 attempt(s), $0.0053, 89.0 s
+[grid] reviewer vs physics on 55 attempts: agree 55, false positives 0, false negatives 0, abstain 0
+[grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 6, "n": 8, "rate": 0.75, "ci95": [0.409, 0.929], "mean_attempts": 1.0, "cost_usd": 0.0154, "cost_per_success_usd": 0.0026, "infra_errors": 0}, "rerun": {"successes": 6, "n": 8, "rate": 0.75, "ci95": [0.409, 0.929], "mean_attempts": 1.5, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "physics": {"successes": 7, "n": 8, "rate": 0.875, "ci95": [0.529, 0.978], "mean_attempts": 1.62, "cost_usd": 0.0284, "cost_per_success_usd": 0.0041, "infra_errors": 0}, "vision": {"successes": 7, "n": 8, "rate": 0.875, "ci95": [0.529, 0.978], "mean_attempts": 1.75, "cost_usd": 0.0425, "cost_per_success_usd": 0.0061, "infra_errors": 0}, "reviewer": {"n": 55, "agree": 55, "false_positive": 0, "false_negative": 0, "abstain": 0, "invalid_json": 0, "cost_usd": 0.0479}}
+[grid] total $0.1341, 1694.3 s -> _logs/cloud/cube.json

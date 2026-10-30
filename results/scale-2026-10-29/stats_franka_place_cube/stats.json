@@ -1,0 +1,156 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "franka_place_cube.json",
+   "robot": "franka",
+   "shape": "place_cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 1648.3,
+   "cost_usd": 0.0634
+  }
+ ],
+ "scenarios": 8,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 8,
+   "successes": 8,
+   "rate": 1.0,
+   "ci95": [
+    0.676,
+    1.0
+   ],
+   "first_attempt": 8,
+   "first_rate": 1.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": null,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 15.4,
+   "failures": {}
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 8,
+   "successes": 4,
+   "rate": 0.5,
+   "ci95": [
+    0.215,
+    0.785
+   ],
+   "first_attempt": 4,
+   "first_rate": 0.5,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0224,
+   "cost_per_success_usd": 0.0056,
+   "mean_wall_s": 55.2,
+   "failures": {
+    "never_lifted": 3,
+    "placed_off_target": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 8,
+   "successes": 4,
+   "rate": 0.5,
+   "ci95": [
+    0.215,
+    0.785
+   ],
+   "first_attempt": 4,
+   "first_rate": 0.5,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 2.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 23.3,
+   "failures": {
+    "never_lifted": 3,
+    "placed_off_target": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 8,
+   "successes": 7,
+   "rate": 0.875,
+   "ci95": [
+    0.529,
+    0.978
+   ],
+   "first_attempt": 2,
+   "first_rate": 0.25,
+   "recovered_attempt2": 2,
+   "recovered_attempt3": 3,
+   "recovery_rate": 0.833,
+   "mean_attempts": 2.25,
+   "cost_usd": 0.041,
+   "cost_per_success_usd": 0.0059,
+   "mean_wall_s": 111.4,
+   "failures": {
+    "placed_off_target": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 8,
+   "diff": 0.375,
+   "ci95": [
+    0.125,
+    0.75
+   ],
+   "a_only": 3,
+   "b_only": 0,
+   "both": 4,
+   "neither": 1,
+   "separated": true
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 8,
+   "diff": 0.375,
+   "ci95": [
+    0.125,
+    0.75
+   ],
+   "a_only": 3,
+   "b_only": 0,
+   "both": 4,
+   "neither": 1,
+   "separated": true
+  }
+ ],
+ "reviewer": null,
+ "per_shape": {
+  "franka/place_cube": {
+   "scripted": "8/8",
+   "oneshot": "4/8",
+   "rerun": "4/8",
+   "physics": "7/8"
+  }
+ }
+}

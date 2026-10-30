@@ -1,0 +1,6 @@
+# Run artefacts: frames, videos, records in progress, cloud pulls. Citable records live in results/.
+_logs/
+__pycache__/
+*.pyc
+.env
+.DS_Store

@@ -1,0 +1,83 @@
+Seed not set for the environment. The environment creation may not be deterministic.
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: WD67CW82
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 50, path: "/tmp/hub-shyam.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-shyam-6856E421.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-shyam-6856E421.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 0.723730 s, Mean: 0.723730 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 3.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/GroundPlane']
+	Replicate physics     : True
+Finalize builder took: Last: 0.008864 s, Mean: 0.008864 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.001457 s, Mean: 0.001457 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000320 s, Mean: 0.000888 s, Std: 0.000804 s, N: 2
+Initialize solver took: Last: 0.597841 s, Mean: 0.597841 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 0.745586 s, Mean: 0.745586 s, Std: 0.000000 s, N: 1
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------------+-----------------------+
+|    Index    | Name                  |
++-------------+-----------------------+
+|      0      | reset_all             |
++-------------+-----------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 8)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         7 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 1 groups.
++-----------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (9,)) |
++---------------+--------------------------+----------------+
+|     Index     | Name                     |     Shape      |
++---------------+--------------------------+----------------+
+|       0       | joint_pos                |      (9,)      |
++---------------+--------------------------+----------------+
+
+CUDA graph took: Last: 0.248425 s, Mean: 0.248425 s, Std: 0.000000 s, N: 1
+[grid] sphere_s seed 100 physics : fail in 3 attempt(s), $0.0092, 199.6 s
+[grid] sphere_s seed 100 hints   : fail in 3 attempt(s), $0.0044, 73.6 s
+[grid] sphere_s seed 101 physics : fail in 3 attempt(s), $0.0059, 88.3 s
+[grid] sphere_s seed 101 hints   : fail in 3 attempt(s), $0.0138, 339.1 s
+[grid] sphere_s seed 102 physics : fail in 3 attempt(s), $0.0131, 222.5 s
+[grid] sphere_s seed 102 hints   : fail in 3 attempt(s), $0.0045, 73.9 s
+[grid] sphere_s seed 103 physics : fail in 3 attempt(s), $0.0043, 87.3 s
+[grid] sphere_s seed 103 hints   : fail in 3 attempt(s), $0.0074, 309.3 s
+[grid] sphere_s seed 104 physics : fail in 3 attempt(s), $0.0115, 214.1 s
+[grid] sphere_s seed 104 hints   : fail in 3 attempt(s), $0.0056, 91.7 s
+[grid] sphere_s seed 105 physics : fail in 3 attempt(s), $0.0072, 115.0 s
+[grid] sphere_s seed 105 hints   : fail in 3 attempt(s), $0.0086, 166.5 s
+[grid] sphere_s seed 106 physics : fail in 3 attempt(s), $0.0076, 142.3 s
+[grid] sphere_s seed 106 hints   : fail in 3 attempt(s), $0.0137, 197.9 s
+[grid] sphere_s seed 107 physics : fail in 3 attempt(s), $0.0055, 81.8 s
+[grid] sphere_s seed 107 hints   : fail in 3 attempt(s), $0.0084, 126.8 s
+[grid] summary: {"physics": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 3.0, "cost_usd": 0.0643, "cost_per_success_usd": null, "infra_errors": 0}, "hints": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 3.0, "cost_usd": 0.0664, "cost_per_success_usd": null, "infra_errors": 0}}
+[grid] total $0.1308, 2533.0 s -> _logs/tavily/sphere_s.json

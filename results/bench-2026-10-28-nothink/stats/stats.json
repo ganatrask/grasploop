@@ -1,0 +1,388 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "franka_box_flat.json",
+   "robot": "franka",
+   "shape": "box_flat",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 432.5,
+   "cost_usd": 0.0762
+  },
+  {
+   "file": "franka_box_tall.json",
+   "robot": "franka",
+   "shape": "box_tall",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 601.0,
+   "cost_usd": 0.0885
+  },
+  {
+   "file": "franka_capsule_s.json",
+   "robot": "franka",
+   "shape": "capsule_s",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 587.0,
+   "cost_usd": 0.0985
+  },
+  {
+   "file": "franka_cube.json",
+   "robot": "franka",
+   "shape": "cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 409.3,
+   "cost_usd": 0.0668
+  },
+  {
+   "file": "franka_sphere_m.json",
+   "robot": "franka",
+   "shape": "sphere_m",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 908.1,
+   "cost_usd": 0.1048
+  },
+  {
+   "file": "franka_sphere_s.json",
+   "robot": "franka",
+   "shape": "sphere_s",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "none",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 582.1,
+   "cost_usd": 0.1019
+  }
+ ],
+ "scenarios": 48,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 48,
+   "successes": 43,
+   "rate": 0.896,
+   "ci95": [
+    0.778,
+    0.955
+   ],
+   "first_attempt": 43,
+   "first_rate": 0.896,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 3.2,
+   "failures": {
+    "object_off_table": 5
+   }
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 48,
+   "successes": 6,
+   "rate": 0.125,
+   "ci95": [
+    0.059,
+    0.247
+   ],
+   "first_attempt": 6,
+   "first_rate": 0.125,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0058,
+   "cost_per_success_usd": 0.001,
+   "mean_wall_s": 6.8,
+   "failures": {
+    "object_missed": 20,
+    "slipped": 6,
+    "object_off_table": 5,
+    "program_error": 4,
+    "insufficient_lift": 3,
+    "invalid_program": 2,
+    "ik_not_reached": 1,
+    "dropped_in_hold": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 48,
+   "successes": 6,
+   "rate": 0.125,
+   "ci95": [
+    0.059,
+    0.247
+   ],
+   "first_attempt": 6,
+   "first_rate": 0.125,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 2.75,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 6.1,
+   "failures": {
+    "object_missed": 20,
+    "slipped": 6,
+    "object_off_table": 5,
+    "program_error": 4,
+    "insufficient_lift": 3,
+    "invalid_program": 2,
+    "ik_not_reached": 1,
+    "dropped_in_hold": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 48,
+   "successes": 12,
+   "rate": 0.25,
+   "ci95": [
+    0.149,
+    0.388
+   ],
+   "first_attempt": 7,
+   "first_rate": 0.146,
+   "recovered_attempt2": 4,
+   "recovered_attempt3": 1,
+   "recovery_rate": 0.122,
+   "mean_attempts": 2.62,
+   "cost_usd": 0.0214,
+   "cost_per_success_usd": 0.0018,
+   "mean_wall_s": 15.5,
+   "failures": {
+    "slipped": 16,
+    "program_error": 5,
+    "insufficient_lift": 4,
+    "object_missed": 4,
+    "ik_not_reached": 3,
+    "no_contact": 2,
+    "object_off_table": 2
+   }
+  },
+  "vision": {
+   "label": "D physics + vision",
+   "n": 48,
+   "successes": 17,
+   "rate": 0.354,
+   "ci95": [
+    0.234,
+    0.496
+   ],
+   "first_attempt": 10,
+   "first_rate": 0.208,
+   "recovered_attempt2": 5,
+   "recovered_attempt3": 2,
+   "recovery_rate": 0.184,
+   "mean_attempts": 2.48,
+   "cost_usd": 0.0838,
+   "cost_per_success_usd": 0.0049,
+   "mean_wall_s": 20.3,
+   "failures": {
+    "slipped": 14,
+    "object_off_table": 7,
+    "ik_not_reached": 4,
+    "program_error": 2,
+    "object_missed": 2,
+    "gripper_open": 1,
+    "insufficient_lift": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 48,
+   "diff": 0.125,
+   "ci95": [
+    -0.042,
+    0.292
+   ],
+   "a_only": 11,
+   "b_only": 5,
+   "both": 1,
+   "neither": 31,
+   "separated": false
+  },
+  {
+   "a": "vision",
+   "b": "oneshot",
+   "n": 48,
+   "diff": 0.229,
+   "ci95": [
+    0.125,
+    0.354
+   ],
+   "a_only": 11,
+   "b_only": 0,
+   "both": 6,
+   "neither": 31,
+   "separated": true
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 48,
+   "diff": 0.125,
+   "ci95": [
+    -0.042,
+    0.292
+   ],
+   "a_only": 11,
+   "b_only": 5,
+   "both": 1,
+   "neither": 31,
+   "separated": false
+  },
+  {
+   "a": "vision",
+   "b": "physics",
+   "n": 48,
+   "diff": 0.104,
+   "ci95": [
+    -0.042,
+    0.25
+   ],
+   "a_only": 9,
+   "b_only": 4,
+   "both": 8,
+   "neither": 27,
+   "separated": false
+  }
+ ],
+ "reviewer": {
+  "n": 473,
+  "agree": 444,
+  "agreement": 0.939,
+  "false_positive": 29,
+  "false_negative": 0,
+  "abstain": 0,
+  "invalid_json": 0,
+  "cost_usd": 0.4256,
+  "failure_pairs": {
+   "object_missed / no_lift_attempted": 78,
+   "slipped / object_dropped": 48,
+   "object_off_table / object_pushed_away": 37,
+   "object_missed / closed_on_nothing": 26,
+   "program_error / no_lift_attempted": 20,
+   "object_missed / object_dropped": 19,
+   "object_missed / object_pushed_away": 16,
+   "slipped / closed_on_nothing": 13,
+   "slipped / object_pushed_away": 13,
+   "invalid_program / no_lift_attempted": 12,
+   "slipped / no_lift_attempted": 9,
+   "ik_not_reached / object_pushed_away": 8
+  }
+ },
+ "per_shape": {
+  "franka/box_flat": {
+   "scripted": "8/8",
+   "oneshot": "2/8",
+   "rerun": "2/8",
+   "physics": "2/8",
+   "vision": "6/8"
+  },
+  "franka/box_tall": {
+   "scripted": "8/8",
+   "oneshot": "2/8",
+   "rerun": "2/8",
+   "physics": "2/8",
+   "vision": "4/8"
+  },
+  "franka/capsule_s": {
+   "scripted": "8/8",
+   "oneshot": "0/8",
+   "rerun": "0/8",
+   "physics": "1/8",
+   "vision": "0/8"
+  },
+  "franka/cube": {
+   "scripted": "8/8",
+   "oneshot": "2/8",
+   "rerun": "2/8",
+   "physics": "7/8",
+   "vision": "7/8"
+  },
+  "franka/sphere_m": {
+   "scripted": "3/8",
+   "oneshot": "0/8",
+   "rerun": "0/8",
+   "physics": "0/8",
+   "vision": "0/8"
+  },
+  "franka/sphere_s": {
+   "scripted": "8/8",
+   "oneshot": "0/8",
+   "rerun": "0/8",
+   "physics": "0/8",
+   "vision": "0/8"
+  }
+ }
+}

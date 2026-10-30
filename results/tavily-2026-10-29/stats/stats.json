@@ -1,0 +1,98 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "sphere_s.json",
+   "robot": "franka",
+   "shape": "sphere_s",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 2533.0,
+   "cost_usd": 0.1308
+  }
+ ],
+ "scenarios": 8,
+ "conditions": {
+  "physics": {
+   "label": "C physics feedback",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 3.0,
+   "cost_usd": 0.0643,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 143.9,
+   "failures": {
+    "slipped": 8
+   }
+  },
+  "hints": {
+   "label": "E physics + web hints (Tavily)",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 3.0,
+   "cost_usd": 0.0664,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 172.3,
+   "failures": {
+    "slipped": 4,
+    "invalid_program": 2,
+    "ik_not_reached": 1,
+    "object_missed": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "hints",
+   "b": "physics",
+   "n": 8,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "a_only": 0,
+   "b_only": 0,
+   "both": 0,
+   "neither": 8,
+   "separated": false
+  }
+ ],
+ "reviewer": null,
+ "per_shape": {
+  "franka/sphere_s": {
+   "physics": "0/8",
+   "hints": "0/8"
+  }
+ }
+}

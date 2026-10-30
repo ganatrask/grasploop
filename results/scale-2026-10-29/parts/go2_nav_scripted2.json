@@ -1,0 +1,8999 @@
+{
+ "script": "eval/run_grid.py",
+ "robot": "go2",
+ "shape": "nav",
+ "model": "nvidia/Nemotron-3_5-Lightning",
+ "reasoning": "default",
+ "attempts": 3,
+ "seeds": [
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107
+ ],
+ "conditions": [
+  "scripted"
+ ],
+ "summary": {
+  "scripted": {
+   "successes": 8,
+   "n": 8,
+   "rate": 1.0,
+   "ci95": [
+    0.676,
+    1.0
+   ],
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "infra_errors": 0
+  }
+ },
+ "reviews": [],
+ "total_cost_usd": 0.0,
+ "wall_s": 93.1,
+ "episodes": {
+  "scripted": [
+   {
+    "seed": 100,
+    "start": {
+     "seed": 100,
+     "start": {
+      "x": -0.092,
+      "y": -0.455,
+      "z": 0.39,
+      "heading_deg": 177.3
+     },
+     "goal": {
+      "x": -2.337,
+      "y": -3.374,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": -2.403,
+      "y": -1.0,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.228,
+     "waypoint_min_dist_m": 0.006,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 10,
+     "final_pose": {
+      "x": -2.391,
+      "y": -3.153,
+      "z": 0.394,
+      "heading_deg": -82.5
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": -2.403,
+       "y": -1.0,
+       "radius": 0.6
+      },
+      "rise_m": 3.682,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.337,
+       "y": -3.374,
+       "radius": 0.5
+      },
+      "rise_m": 3.682,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.092,
+       "y": -0.455,
+       "z": 0.39,
+       "heading_deg": 177.3
+      },
+      "rise_m": 3.682,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": 2.374,
+      "rise_m": 3.682,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": -166.7,
+      "rise_m": 3.682,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.356,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.676,
+        "y": -0.548,
+        "z": 0.385,
+        "heading_deg": -163.0
+       },
+       "dist_goal_m": 3.278,
+       "dist_way_m": 1.785,
+       "bearing_goal_deg": -120.4,
+       "heading_error_deg": 42.6,
+       "fell": false
+      },
+      "rise_m": 3.278,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.676,
+       "y": -0.548,
+       "z": 0.385,
+       "heading_deg": -163.0
+      },
+      "rise_m": 3.278,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": 1.785,
+      "rise_m": 3.278,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": -165.3,
+      "rise_m": 3.278,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.051,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.351,
+        "y": -0.785,
+        "z": 0.386,
+        "heading_deg": -164.4
+       },
+       "dist_goal_m": 2.77,
+       "dist_way_m": 1.074,
+       "bearing_goal_deg": -110.8,
+       "heading_error_deg": 53.6,
+       "fell": false
+      },
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.351,
+       "y": -0.785,
+       "z": 0.386,
+       "heading_deg": -164.4
+      },
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": 1.074,
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": -168.4,
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.089,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.044,
+        "y": -0.956,
+        "z": 0.39,
+        "heading_deg": -169.3
+       },
+       "dist_goal_m": 2.436,
+       "dist_way_m": 0.362,
+       "bearing_goal_deg": -96.9,
+       "heading_error_deg": 72.4,
+       "fell": false
+      },
+      "rise_m": 2.436,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.044,
+       "y": -0.956,
+       "z": 0.39,
+       "heading_deg": -169.3
+      },
+      "rise_m": 2.436,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": 0.362,
+      "rise_m": 2.436,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": -173.0,
+      "rise_m": 2.436,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.082,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.412,
+        "y": -1.007,
+        "z": 0.391,
+        "heading_deg": -174.4
+       },
+       "dist_goal_m": 2.368,
+       "dist_way_m": 0.011,
+       "bearing_goal_deg": -88.2,
+       "heading_error_deg": 86.2,
+       "fell": false
+      },
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.412,
+       "y": -1.007,
+       "z": 0.391,
+       "heading_deg": -174.4
+      },
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -2.403,
+       "y": -1.0
+      },
+      "result": 0.011,
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.412,
+       "y": -1.007,
+       "z": 0.391,
+       "heading_deg": -174.4
+      },
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 2.368,
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -88.2,
+      "rise_m": 2.368,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.501,
+        "y": -1.031,
+        "z": 0.383,
+        "heading_deg": -143.8
+       },
+       "dist_goal_m": 2.349,
+       "dist_way_m": 0.103,
+       "bearing_goal_deg": -86.0,
+       "heading_error_deg": 57.8,
+       "fell": false
+      },
+      "rise_m": 2.349,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.501,
+       "y": -1.031,
+       "z": 0.383,
+       "heading_deg": -143.8
+      },
+      "rise_m": 2.349,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 2.349,
+      "rise_m": 2.349,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -86.0,
+      "rise_m": 2.349,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.584,
+        "y": -1.127,
+        "z": 0.39,
+        "heading_deg": -110.2
+       },
+       "dist_goal_m": 2.261,
+       "dist_way_m": 0.221,
+       "bearing_goal_deg": -83.7,
+       "heading_error_deg": 26.5,
+       "fell": false
+      },
+      "rise_m": 2.261,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.584,
+       "y": -1.127,
+       "z": 0.39,
+       "heading_deg": -110.2
+      },
+      "rise_m": 2.261,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 2.261,
+      "rise_m": 2.261,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -83.7,
+      "rise_m": 2.261,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.589,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.573,
+        "y": -1.75,
+        "z": 0.385,
+        "heading_deg": -77.6
+       },
+       "dist_goal_m": 1.641,
+       "dist_way_m": 0.769,
+       "bearing_goal_deg": -81.7,
+       "heading_error_deg": -4.1,
+       "fell": false
+      },
+      "rise_m": 1.641,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.573,
+       "y": -1.75,
+       "z": 0.385,
+       "heading_deg": -77.6
+      },
+      "rise_m": 1.641,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 1.641,
+      "rise_m": 1.641,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -81.7,
+      "rise_m": 1.641,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.091,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.4,
+        "y": -2.446,
+        "z": 0.385,
+        "heading_deg": -80.6
+       },
+       "dist_goal_m": 0.93,
+       "dist_way_m": 1.446,
+       "bearing_goal_deg": -86.1,
+       "heading_error_deg": -5.5,
+       "fell": false
+      },
+      "rise_m": 0.93,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.4,
+       "y": -2.446,
+       "z": 0.385,
+       "heading_deg": -80.6
+      },
+      "rise_m": 0.93,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 0.93,
+      "rise_m": 0.93,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -86.1,
+      "rise_m": 0.93,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.122,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.37,
+        "y": -2.82,
+        "z": 0.387,
+        "heading_deg": -87.8
+       },
+       "dist_goal_m": 0.555,
+       "dist_way_m": 1.82,
+       "bearing_goal_deg": -86.6,
+       "heading_error_deg": 1.2,
+       "fell": false
+      },
+      "rise_m": 0.555,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.37,
+       "y": -2.82,
+       "z": 0.387,
+       "heading_deg": -87.8
+      },
+      "rise_m": 0.555,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 0.555,
+      "rise_m": 0.555,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": -86.6,
+      "rise_m": 0.555,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.027,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.377,
+        "y": -3.137,
+        "z": 0.39,
+        "heading_deg": -87.8
+       },
+       "dist_goal_m": 0.24,
+       "dist_way_m": 2.137,
+       "bearing_goal_deg": -80.4,
+       "heading_error_deg": 7.4,
+       "fell": false
+      },
+      "rise_m": 0.24,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.377,
+       "y": -3.137,
+       "z": 0.39,
+       "heading_deg": -87.8
+      },
+      "rise_m": 0.24,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 0.24,
+      "rise_m": 0.24,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.388,
+        "y": -3.149,
+        "z": 0.394,
+        "heading_deg": -85.7
+       },
+       "dist_goal_m": 0.231,
+       "dist_way_m": 2.149,
+       "bearing_goal_deg": -77.2,
+       "heading_error_deg": 8.5,
+       "fell": false
+      },
+      "rise_m": 0.231,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.337,
+       "y": -3.374,
+       "radius": 0.5
+      },
+      "rise_m": 0.231,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.337,
+       "y": -3.374,
+       "radius": 0.5
+      },
+      "rise_m": 0.231,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": -2.337,
+       "y": -3.374
+      },
+      "result": 0.231,
+      "rise_m": 0.231,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.23"
+      },
+      "result": null,
+      "rise_m": 0.231,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 600,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 12.1
+   },
+   {
+    "seed": 101,
+    "start": {
+     "seed": 101,
+     "start": {
+      "x": 0.16,
+      "y": -0.391,
+      "z": 0.393,
+      "heading_deg": -132.8
+     },
+     "goal": {
+      "x": 3.033,
+      "y": 1.216,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": 0.865,
+      "y": 1.722,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.063,
+     "waypoint_min_dist_m": 0.013,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 15,
+     "final_pose": {
+      "x": 3.089,
+      "y": 1.187,
+      "z": 0.395,
+      "heading_deg": -9.1
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": 0.865,
+       "y": 1.722,
+       "radius": 0.6
+      },
+      "rise_m": 3.292,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 3.033,
+       "y": 1.216,
+       "radius": 0.5
+      },
+      "rise_m": 3.292,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.16,
+       "y": -0.391,
+       "z": 0.393,
+       "heading_deg": -132.8
+      },
+      "rise_m": 3.292,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.228,
+      "rise_m": 3.292,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 71.5,
+      "rise_m": 3.292,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.046,
+        "y": -0.416,
+        "z": 0.387,
+        "heading_deg": -164.5
+       },
+       "dist_goal_m": 3.404,
+       "dist_way_m": 2.289,
+       "bearing_goal_deg": 28.7,
+       "heading_error_deg": -166.8,
+       "fell": false
+      },
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.046,
+       "y": -0.416,
+       "z": 0.387,
+       "heading_deg": -164.5
+      },
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.289,
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 69.0,
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.075,
+        "y": -0.376,
+        "z": 0.387,
+        "heading_deg": 162.0
+       },
+       "dist_goal_m": 3.492,
+       "dist_way_m": 2.299,
+       "bearing_goal_deg": 27.1,
+       "heading_error_deg": -134.9,
+       "fell": false
+      },
+      "rise_m": 3.492,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.075,
+       "y": -0.376,
+       "z": 0.387,
+       "heading_deg": 162.0
+      },
+      "rise_m": 3.492,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.299,
+      "rise_m": 3.492,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 65.9,
+      "rise_m": 3.492,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.163,
+        "y": -0.289,
+        "z": 0.383,
+        "heading_deg": 129.4
+       },
+       "dist_goal_m": 3.533,
+       "dist_way_m": 2.259,
+       "bearing_goal_deg": 25.2,
+       "heading_error_deg": -104.2,
+       "fell": false
+      },
+      "rise_m": 3.533,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.163,
+       "y": -0.289,
+       "z": 0.383,
+       "heading_deg": 129.4
+      },
+      "rise_m": 3.533,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.259,
+      "rise_m": 3.533,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 62.9,
+      "rise_m": 3.533,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.178,
+        "y": -0.164,
+        "z": 0.38,
+        "heading_deg": 96.6
+       },
+       "dist_goal_m": 3.495,
+       "dist_way_m": 2.155,
+       "bearing_goal_deg": 23.3,
+       "heading_error_deg": -73.3,
+       "fell": false
+      },
+      "rise_m": 3.495,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.178,
+       "y": -0.164,
+       "z": 0.38,
+       "heading_deg": 96.6
+      },
+      "rise_m": 3.495,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.155,
+      "rise_m": 3.495,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 61.1,
+      "rise_m": 3.495,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.129,
+        "y": -0.045,
+        "z": 0.383,
+        "heading_deg": 64.6
+       },
+       "dist_goal_m": 3.404,
+       "dist_way_m": 2.027,
+       "bearing_goal_deg": 21.7,
+       "heading_error_deg": -42.9,
+       "fell": false
+      },
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.129,
+       "y": -0.045,
+       "z": 0.383,
+       "heading_deg": 64.6
+      },
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 2.027,
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 60.6,
+      "rise_m": 3.404,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.089,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.145,
+        "y": 0.523,
+        "z": 0.385,
+        "heading_deg": 59.1
+       },
+       "dist_goal_m": 2.97,
+       "dist_way_m": 1.399,
+       "bearing_goal_deg": 13.5,
+       "heading_error_deg": -45.6,
+       "fell": false
+      },
+      "rise_m": 2.97,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.145,
+       "y": 0.523,
+       "z": 0.385,
+       "heading_deg": 59.1
+      },
+      "rise_m": 2.97,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 1.399,
+      "rise_m": 2.97,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 59.0,
+      "rise_m": 2.97,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.002,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.499,
+        "y": 1.149,
+        "z": 0.385,
+        "heading_deg": 59.0
+       },
+       "dist_goal_m": 2.535,
+       "dist_way_m": 0.68,
+       "bearing_goal_deg": 1.5,
+       "heading_error_deg": -57.5,
+       "fell": false
+      },
+      "rise_m": 2.535,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.499,
+       "y": 1.149,
+       "z": 0.385,
+       "heading_deg": 59.0
+      },
+      "rise_m": 2.535,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 0.68,
+      "rise_m": 2.535,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 57.4,
+      "rise_m": 2.535,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.036,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.719,
+        "y": 1.446,
+        "z": 0.386,
+        "heading_deg": 56.4
+       },
+       "dist_goal_m": 2.325,
+       "dist_way_m": 0.312,
+       "bearing_goal_deg": -5.7,
+       "heading_error_deg": -62.1,
+       "fell": false
+      },
+      "rise_m": 2.325,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.719,
+       "y": 1.446,
+       "z": 0.386,
+       "heading_deg": 56.4
+      },
+      "rise_m": 2.325,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 0.312,
+      "rise_m": 2.325,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 62.1,
+      "rise_m": 2.325,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.127,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.879,
+        "y": 1.724,
+        "z": 0.39,
+        "heading_deg": 62.6
+       },
+       "dist_goal_m": 2.213,
+       "dist_way_m": 0.014,
+       "bearing_goal_deg": -13.3,
+       "heading_error_deg": -75.9,
+       "fell": false
+      },
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.879,
+       "y": 1.724,
+       "z": 0.39,
+       "heading_deg": 62.6
+      },
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 0.865,
+       "y": 1.722
+      },
+      "result": 0.014,
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.879,
+       "y": 1.724,
+       "z": 0.39,
+       "heading_deg": 62.6
+      },
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 2.213,
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -13.3,
+      "rise_m": 2.213,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.981,
+        "y": 1.829,
+        "z": 0.383,
+        "heading_deg": 32.1
+       },
+       "dist_goal_m": 2.142,
+       "dist_way_m": 0.158,
+       "bearing_goal_deg": -16.6,
+       "heading_error_deg": -48.7,
+       "fell": false
+      },
+      "rise_m": 2.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.981,
+       "y": 1.829,
+       "z": 0.383,
+       "heading_deg": 32.1
+      },
+      "rise_m": 2.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 2.142,
+      "rise_m": 2.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -16.6,
+      "rise_m": 2.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.121,
+        "y": 1.829,
+        "z": 0.386,
+        "heading_deg": -0.9
+       },
+       "dist_goal_m": 2.008,
+       "dist_way_m": 0.277,
+       "bearing_goal_deg": -17.8,
+       "heading_error_deg": -16.9,
+       "fell": false
+      },
+      "rise_m": 2.008,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.121,
+       "y": 1.829,
+       "z": 0.386,
+       "heading_deg": -0.9
+      },
+      "rise_m": 2.008,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 2.008,
+      "rise_m": 2.008,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -17.8,
+      "rise_m": 2.008,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.376,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.729,
+        "y": 1.691,
+        "z": 0.385,
+        "heading_deg": -22.0
+       },
+       "dist_goal_m": 1.388,
+       "dist_way_m": 0.865,
+       "bearing_goal_deg": -20.0,
+       "heading_error_deg": 2.0,
+       "fell": false
+      },
+      "rise_m": 1.388,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.729,
+       "y": 1.691,
+       "z": 0.385,
+       "heading_deg": -22.0
+      },
+      "rise_m": 1.388,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 1.388,
+      "rise_m": 1.388,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -20.0,
+      "rise_m": 1.388,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.044,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 2.396,
+        "y": 1.428,
+        "z": 0.387,
+        "heading_deg": -20.9
+       },
+       "dist_goal_m": 0.671,
+       "dist_way_m": 1.559,
+       "bearing_goal_deg": -18.4,
+       "heading_error_deg": 2.5,
+       "fell": false
+      },
+      "rise_m": 0.671,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 2.396,
+       "y": 1.428,
+       "z": 0.387,
+       "heading_deg": -20.9
+      },
+      "rise_m": 0.671,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 0.671,
+      "rise_m": 0.671,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -18.4,
+      "rise_m": 0.671,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.056,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 2.735,
+        "y": 1.29,
+        "z": 0.387,
+        "heading_deg": -19.2
+       },
+       "dist_goal_m": 0.307,
+       "dist_way_m": 1.919,
+       "bearing_goal_deg": -13.9,
+       "heading_error_deg": 5.3,
+       "fell": false
+      },
+      "rise_m": 0.307,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 2.735,
+       "y": 1.29,
+       "z": 0.387,
+       "heading_deg": -19.2
+      },
+      "rise_m": 0.307,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 0.307,
+      "rise_m": 0.307,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "heading_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": -13.9,
+      "rise_m": 0.307,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.118,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 3.07,
+        "y": 1.2,
+        "z": 0.395,
+        "heading_deg": -12.7
+       },
+       "dist_goal_m": 0.04,
+       "dist_way_m": 2.266,
+       "bearing_goal_deg": 156.6,
+       "heading_error_deg": 169.3,
+       "fell": false
+      },
+      "rise_m": 0.04,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 3.07,
+       "y": 1.2,
+       "z": 0.395,
+       "heading_deg": -12.7
+      },
+      "rise_m": 0.04,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 0.04,
+      "rise_m": 0.04,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 3.078,
+        "y": 1.19,
+        "z": 0.397,
+        "heading_deg": -11.5
+       },
+       "dist_goal_m": 0.052,
+       "dist_way_m": 2.276,
+       "bearing_goal_deg": 150.0,
+       "heading_error_deg": 161.5,
+       "fell": false
+      },
+      "rise_m": 0.052,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 3.033,
+       "y": 1.216,
+       "radius": 0.5
+      },
+      "rise_m": 0.052,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 3.033,
+       "y": 1.216,
+       "radius": 0.5
+      },
+      "rise_m": 0.052,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "distance_to",
+      "args": {
+       "x": 3.033,
+       "y": 1.216
+      },
+      "result": 0.052,
+      "rise_m": 0.052,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.05"
+      },
+      "result": null,
+      "rise_m": 0.052,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 850,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 11.3
+   },
+   {
+    "seed": 102,
+    "start": {
+     "seed": 102,
+     "start": {
+      "x": 0.332,
+      "y": -0.422,
+      "z": 0.392,
+      "heading_deg": -148.2
+     },
+     "goal": {
+      "x": -2.011,
+      "y": -3.57,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": -2.043,
+      "y": -1.1,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.067,
+     "waypoint_min_dist_m": 0.01,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 10,
+     "final_pose": {
+      "x": -2.045,
+      "y": -3.628,
+      "z": 0.394,
+      "heading_deg": -89.8
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": -2.043,
+       "y": -1.1,
+       "radius": 0.6
+      },
+      "rise_m": 3.924,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.011,
+       "y": -3.57,
+       "radius": 0.5
+      },
+      "rise_m": 3.924,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.332,
+       "y": -0.422,
+       "z": 0.392,
+       "heading_deg": -148.2
+      },
+      "rise_m": 3.924,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": 2.47,
+      "rise_m": 3.924,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": -164.1,
+      "rise_m": 3.924,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.353,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.216,
+        "y": -0.656,
+        "z": 0.383,
+        "heading_deg": -165.4
+       },
+       "dist_goal_m": 3.422,
+       "dist_way_m": 1.88,
+       "bearing_goal_deg": -121.6,
+       "heading_error_deg": 43.8,
+       "fell": false
+      },
+      "rise_m": 3.422,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.216,
+       "y": -0.656,
+       "z": 0.383,
+       "heading_deg": -165.4
+      },
+      "rise_m": 3.422,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": 1.88,
+      "rise_m": 3.422,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": -166.3,
+      "rise_m": 3.422,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.02,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.909,
+        "y": -0.836,
+        "z": 0.384,
+        "heading_deg": -167.6
+       },
+       "dist_goal_m": 2.948,
+       "dist_way_m": 1.164,
+       "bearing_goal_deg": -112.0,
+       "heading_error_deg": 55.6,
+       "fell": false
+      },
+      "rise_m": 2.948,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.909,
+       "y": -0.836,
+       "z": 0.384,
+       "heading_deg": -167.6
+      },
+      "rise_m": 2.948,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": 1.164,
+      "rise_m": 2.948,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": -166.9,
+      "rise_m": 2.948,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.016,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.605,
+        "y": -1.011,
+        "z": 0.388,
+        "heading_deg": -166.9
+       },
+       "dist_goal_m": 2.591,
+       "dist_way_m": 0.447,
+       "bearing_goal_deg": -99.0,
+       "heading_error_deg": 67.9,
+       "fell": false
+      },
+      "rise_m": 2.591,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.605,
+       "y": -1.011,
+       "z": 0.388,
+       "heading_deg": -166.9
+      },
+      "rise_m": 2.591,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": 0.447,
+      "rise_m": 2.591,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": -168.5,
+      "rise_m": 2.591,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.036,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.959,
+        "y": -1.08,
+        "z": 0.391,
+        "heading_deg": -169.4
+       },
+       "dist_goal_m": 2.491,
+       "dist_way_m": 0.086,
+       "bearing_goal_deg": -91.2,
+       "heading_error_deg": 78.2,
+       "fell": false
+      },
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.959,
+       "y": -1.08,
+       "z": 0.391,
+       "heading_deg": -169.4
+      },
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -2.043,
+       "y": -1.1
+      },
+      "result": 0.086,
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.959,
+       "y": -1.08,
+       "z": 0.391,
+       "heading_deg": -169.4
+      },
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 2.491,
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -91.2,
+      "rise_m": 2.491,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.051,
+        "y": -1.118,
+        "z": 0.389,
+        "heading_deg": -139.1
+       },
+       "dist_goal_m": 2.452,
+       "dist_way_m": 0.02,
+       "bearing_goal_deg": -89.1,
+       "heading_error_deg": 50.0,
+       "fell": false
+      },
+      "rise_m": 2.452,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.051,
+       "y": -1.118,
+       "z": 0.389,
+       "heading_deg": -139.1
+      },
+      "rise_m": 2.452,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 2.452,
+      "rise_m": 2.452,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -89.1,
+      "rise_m": 2.452,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.124,
+        "y": -1.236,
+        "z": 0.394,
+        "heading_deg": -105.5
+       },
+       "dist_goal_m": 2.337,
+       "dist_way_m": 0.158,
+       "bearing_goal_deg": -87.2,
+       "heading_error_deg": 18.3,
+       "fell": false
+      },
+      "rise_m": 2.337,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.124,
+       "y": -1.236,
+       "z": 0.394,
+       "heading_deg": -105.5
+      },
+      "rise_m": 2.337,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 2.337,
+      "rise_m": 2.337,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -87.2,
+      "rise_m": 2.337,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.407,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.125,
+        "y": -1.843,
+        "z": 0.385,
+        "heading_deg": -82.6
+       },
+       "dist_goal_m": 1.731,
+       "dist_way_m": 0.748,
+       "bearing_goal_deg": -86.2,
+       "heading_error_deg": -3.6,
+       "fell": false
+      },
+      "rise_m": 1.731,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.125,
+       "y": -1.843,
+       "z": 0.385,
+       "heading_deg": -82.6
+      },
+      "rise_m": 1.731,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 1.731,
+      "rise_m": 1.731,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -86.2,
+      "rise_m": 1.731,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.08,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.027,
+        "y": -2.553,
+        "z": 0.384,
+        "heading_deg": -85.7
+       },
+       "dist_goal_m": 1.017,
+       "dist_way_m": 1.453,
+       "bearing_goal_deg": -89.1,
+       "heading_error_deg": -3.4,
+       "fell": false
+      },
+      "rise_m": 1.017,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.027,
+       "y": -2.553,
+       "z": 0.384,
+       "heading_deg": -85.7
+      },
+      "rise_m": 1.017,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 1.017,
+      "rise_m": 1.017,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -89.1,
+      "rise_m": 1.017,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.076,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.988,
+        "y": -3.267,
+        "z": 0.39,
+        "heading_deg": -90.0
+       },
+       "dist_goal_m": 0.304,
+       "dist_way_m": 2.168,
+       "bearing_goal_deg": -94.3,
+       "heading_error_deg": -4.3,
+       "fell": false
+      },
+      "rise_m": 0.304,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.988,
+       "y": -3.267,
+       "z": 0.39,
+       "heading_deg": -90.0
+      },
+      "rise_m": 0.304,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 0.304,
+      "rise_m": 0.304,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": -94.3,
+      "rise_m": 0.304,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.096,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.027,
+        "y": -3.626,
+        "z": 0.389,
+        "heading_deg": -95.3
+       },
+       "dist_goal_m": 0.058,
+       "dist_way_m": 2.526,
+       "bearing_goal_deg": 74.1,
+       "heading_error_deg": 169.4,
+       "fell": false
+      },
+      "rise_m": 0.058,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.027,
+       "y": -3.626,
+       "z": 0.389,
+       "heading_deg": -95.3
+      },
+      "rise_m": 0.058,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 0.058,
+      "rise_m": 0.058,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.04,
+        "y": -3.638,
+        "z": 0.397,
+        "heading_deg": -93.5
+       },
+       "dist_goal_m": 0.074,
+       "dist_way_m": 2.538,
+       "bearing_goal_deg": 66.9,
+       "heading_error_deg": 160.4,
+       "fell": false
+      },
+      "rise_m": 0.074,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.011,
+       "y": -3.57,
+       "radius": 0.5
+      },
+      "rise_m": 0.074,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.011,
+       "y": -3.57,
+       "radius": 0.5
+      },
+      "rise_m": 0.074,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": -2.011,
+       "y": -3.57
+      },
+      "result": 0.074,
+      "rise_m": 0.074,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.07"
+      },
+      "result": null,
+      "rise_m": 0.074,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 600,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 7.9
+   },
+   {
+    "seed": 103,
+    "start": {
+     "seed": 103,
+     "start": {
+      "x": -0.529,
+      "y": 0.508,
+      "z": 0.392,
+      "heading_deg": -38.1
+     },
+     "goal": {
+      "x": -4.182,
+      "y": 0.992,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": -2.158,
+      "y": 2.237,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.204,
+     "waypoint_min_dist_m": 0.131,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 15,
+     "final_pose": {
+      "x": -4.009,
+      "y": 1.101,
+      "z": 0.395,
+      "heading_deg": -152.2
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": -2.158,
+       "y": 2.237,
+       "radius": 0.6
+      },
+      "rise_m": 3.685,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.182,
+       "y": 0.992,
+       "radius": 0.5
+      },
+      "rise_m": 3.685,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.529,
+       "y": 0.508,
+       "z": 0.392,
+       "heading_deg": -38.1
+      },
+      "rise_m": 3.685,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.376,
+      "rise_m": 3.685,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 133.3,
+      "rise_m": 3.685,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.417,
+        "y": 0.48,
+        "z": 0.393,
+        "heading_deg": -5.0
+       },
+       "dist_goal_m": 3.8,
+       "dist_way_m": 2.473,
+       "bearing_goal_deg": 172.3,
+       "heading_error_deg": 177.3,
+       "fell": false
+      },
+      "rise_m": 3.8,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.417,
+       "y": 0.48,
+       "z": 0.393,
+       "heading_deg": -5.0
+      },
+      "rise_m": 3.8,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.473,
+      "rise_m": 3.8,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 134.7,
+      "rise_m": 3.8,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.284,
+        "y": 0.528,
+        "z": 0.393,
+        "heading_deg": 29.4
+       },
+       "dist_goal_m": 3.926,
+       "dist_way_m": 2.536,
+       "bearing_goal_deg": 173.2,
+       "heading_error_deg": 143.8,
+       "fell": false
+      },
+      "rise_m": 3.926,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.284,
+       "y": 0.528,
+       "z": 0.393,
+       "heading_deg": 29.4
+      },
+      "rise_m": 3.926,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.536,
+      "rise_m": 3.926,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 137.6,
+      "rise_m": 3.926,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.213,
+        "y": 0.635,
+        "z": 0.392,
+        "heading_deg": 63.0
+       },
+       "dist_goal_m": 3.985,
+       "dist_way_m": 2.52,
+       "bearing_goal_deg": 174.9,
+       "heading_error_deg": 111.9,
+       "fell": false
+      },
+      "rise_m": 3.985,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.213,
+       "y": 0.635,
+       "z": 0.392,
+       "heading_deg": 63.0
+      },
+      "rise_m": 3.985,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.52,
+      "rise_m": 3.985,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 140.5,
+      "rise_m": 3.985,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.221,
+        "y": 0.751,
+        "z": 0.388,
+        "heading_deg": 97.7
+       },
+       "dist_goal_m": 3.968,
+       "dist_way_m": 2.441,
+       "bearing_goal_deg": 176.5,
+       "heading_error_deg": 78.8,
+       "fell": false
+      },
+      "rise_m": 3.968,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.221,
+       "y": 0.751,
+       "z": 0.388,
+       "heading_deg": 97.7
+      },
+      "rise_m": 3.968,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.441,
+      "rise_m": 3.968,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 142.5,
+      "rise_m": 3.968,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.274,
+        "y": 0.842,
+        "z": 0.389,
+        "heading_deg": 131.6
+       },
+       "dist_goal_m": 3.911,
+       "dist_way_m": 2.344,
+       "bearing_goal_deg": 177.8,
+       "heading_error_deg": 46.2,
+       "fell": false
+      },
+      "rise_m": 3.911,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.274,
+       "y": 0.842,
+       "z": 0.389,
+       "heading_deg": 131.6
+      },
+      "rise_m": 3.911,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 2.344,
+      "rise_m": 3.911,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 143.5,
+      "rise_m": 3.911,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.264,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.781,
+        "y": 1.214,
+        "z": 0.385,
+        "heading_deg": 147.9
+       },
+       "dist_goal_m": 3.408,
+       "dist_way_m": 1.715,
+       "bearing_goal_deg": -176.3,
+       "heading_error_deg": 35.8,
+       "fell": false
+      },
+      "rise_m": 3.408,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.781,
+       "y": 1.214,
+       "z": 0.385,
+       "heading_deg": 147.9
+      },
+      "rise_m": 3.408,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 1.715,
+      "rise_m": 3.408,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 143.4,
+      "rise_m": 3.408,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.1,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.385,
+        "y": 1.605,
+        "z": 0.385,
+        "heading_deg": 143.2
+       },
+       "dist_goal_m": 2.863,
+       "dist_way_m": 0.998,
+       "bearing_goal_deg": -167.6,
+       "heading_error_deg": 49.2,
+       "fell": false
+      },
+      "rise_m": 2.863,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.385,
+       "y": 1.605,
+       "z": 0.385,
+       "heading_deg": 143.2
+      },
+      "rise_m": 2.863,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 0.998,
+      "rise_m": 2.863,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 140.7,
+      "rise_m": 2.863,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.056,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.685,
+        "y": 1.843,
+        "z": 0.386,
+        "heading_deg": 139.3
+       },
+       "dist_goal_m": 2.638,
+       "dist_way_m": 0.616,
+       "bearing_goal_deg": -161.2,
+       "heading_error_deg": 59.5,
+       "fell": false
+      },
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.685,
+       "y": 1.843,
+       "z": 0.386,
+       "heading_deg": 139.3
+      },
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 0.616,
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 140.2,
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.02,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.947,
+        "y": 2.073,
+        "z": 0.392,
+        "heading_deg": 140.0
+       },
+       "dist_goal_m": 2.483,
+       "dist_way_m": 0.267,
+       "bearing_goal_deg": -154.2,
+       "heading_error_deg": 65.8,
+       "fell": false
+      },
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.947,
+       "y": 2.073,
+       "z": 0.392,
+       "heading_deg": 140.0
+      },
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": -2.158,
+       "y": 2.237
+      },
+      "result": 0.267,
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.947,
+       "y": 2.073,
+       "z": 0.392,
+       "heading_deg": 140.0
+      },
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 2.483,
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -154.2,
+      "rise_m": 2.483,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.063,
+        "y": 2.124,
+        "z": 0.38,
+        "heading_deg": 172.1
+       },
+       "dist_goal_m": 2.402,
+       "dist_way_m": 0.148,
+       "bearing_goal_deg": -151.9,
+       "heading_error_deg": 36.0,
+       "fell": false
+      },
+      "rise_m": 2.402,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.063,
+       "y": 2.124,
+       "z": 0.38,
+       "heading_deg": 172.1
+      },
+      "rise_m": 2.402,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 2.402,
+      "rise_m": 2.402,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -151.9,
+      "rise_m": 2.402,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.18,
+        "y": 2.082,
+        "z": 0.387,
+        "heading_deg": -153.3
+       },
+       "dist_goal_m": 2.279,
+       "dist_way_m": 0.157,
+       "bearing_goal_deg": -151.4,
+       "heading_error_deg": 1.9,
+       "fell": false
+      },
+      "rise_m": 2.279,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.18,
+       "y": 2.082,
+       "z": 0.387,
+       "heading_deg": -153.3
+      },
+      "rise_m": 2.279,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 2.279,
+      "rise_m": 2.279,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -151.4,
+      "rise_m": 2.279,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.042,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.709,
+        "y": 1.739,
+        "z": 0.386,
+        "heading_deg": -147.9
+       },
+       "dist_goal_m": 1.652,
+       "dist_way_m": 0.743,
+       "bearing_goal_deg": -153.1,
+       "heading_error_deg": -5.2,
+       "fell": false
+      },
+      "rise_m": 1.652,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.709,
+       "y": 1.739,
+       "z": 0.386,
+       "heading_deg": -147.9
+      },
+      "rise_m": 1.652,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 1.652,
+      "rise_m": 1.652,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -153.1,
+      "rise_m": 1.652,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.116,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -3.332,
+        "y": 1.383,
+        "z": 0.385,
+        "heading_deg": -153.9
+       },
+       "dist_goal_m": 0.936,
+       "dist_way_m": 1.452,
+       "bearing_goal_deg": -155.3,
+       "heading_error_deg": -1.4,
+       "fell": false
+      },
+      "rise_m": 0.936,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -3.332,
+       "y": 1.383,
+       "z": 0.385,
+       "heading_deg": -153.9
+      },
+      "rise_m": 0.936,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 0.936,
+      "rise_m": 0.936,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -155.3,
+      "rise_m": 0.936,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.031,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -3.676,
+        "y": 1.223,
+        "z": 0.385,
+        "heading_deg": -156.4
+       },
+       "dist_goal_m": 0.556,
+       "dist_way_m": 1.826,
+       "bearing_goal_deg": -155.5,
+       "heading_error_deg": 0.9,
+       "fell": false
+      },
+      "rise_m": 0.556,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -3.676,
+       "y": 1.223,
+       "z": 0.385,
+       "heading_deg": -156.4
+      },
+      "rise_m": 0.556,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 0.556,
+      "rise_m": 0.556,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "heading_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": -155.5,
+      "rise_m": 0.556,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.02,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -3.99,
+        "y": 1.091,
+        "z": 0.391,
+        "heading_deg": -156.2
+       },
+       "dist_goal_m": 0.216,
+       "dist_way_m": 2.161,
+       "bearing_goal_deg": -152.7,
+       "heading_error_deg": 3.5,
+       "fell": false
+      },
+      "rise_m": 0.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -3.99,
+       "y": 1.091,
+       "z": 0.391,
+       "heading_deg": -156.2
+      },
+      "rise_m": 0.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 0.216,
+      "rise_m": 0.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -4.017,
+        "y": 1.091,
+        "z": 0.396,
+        "heading_deg": -155.2
+       },
+       "dist_goal_m": 0.192,
+       "dist_way_m": 2.184,
+       "bearing_goal_deg": -149.0,
+       "heading_error_deg": 6.2,
+       "fell": false
+      },
+      "rise_m": 0.192,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.182,
+       "y": 0.992,
+       "radius": 0.5
+      },
+      "rise_m": 0.192,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.182,
+       "y": 0.992,
+       "radius": 0.5
+      },
+      "rise_m": 0.192,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "distance_to",
+      "args": {
+       "x": -4.182,
+       "y": 0.992
+      },
+      "result": 0.192,
+      "rise_m": 0.192,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.19"
+      },
+      "result": null,
+      "rise_m": 0.192,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 850,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 11.1
+   },
+   {
+    "seed": 104,
+    "start": {
+     "seed": 104,
+     "start": {
+      "x": -0.229,
+      "y": 0.219,
+      "z": 0.39,
+      "heading_deg": 14.0
+     },
+     "goal": {
+      "x": -4.401,
+      "y": 1.291,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": -1.942,
+      "y": 2.208,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.104,
+     "waypoint_min_dist_m": 0.019,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 13,
+     "final_pose": {
+      "x": -4.309,
+      "y": 1.339,
+      "z": 0.396,
+      "heading_deg": -163.1
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": -1.942,
+       "y": 2.208,
+       "radius": 0.6
+      },
+      "rise_m": 4.308,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.401,
+       "y": 1.291,
+       "radius": 0.5
+      },
+      "rise_m": 4.308,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.229,
+       "y": 0.219,
+       "z": 0.39,
+       "heading_deg": 14.0
+      },
+      "rise_m": 4.308,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 2.625,
+      "rise_m": 4.308,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 130.7,
+      "rise_m": 4.308,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.131,
+        "y": 0.3,
+        "z": 0.389,
+        "heading_deg": 46.1
+       },
+       "dist_goal_m": 4.383,
+       "dist_way_m": 2.631,
+       "bearing_goal_deg": 166.9,
+       "heading_error_deg": 120.8,
+       "fell": false
+      },
+      "rise_m": 4.383,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.131,
+       "y": 0.3,
+       "z": 0.389,
+       "heading_deg": 46.1
+      },
+      "rise_m": 4.383,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 2.631,
+      "rise_m": 4.383,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 133.5,
+      "rise_m": 4.383,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.095,
+        "y": 0.359,
+        "z": 0.381,
+        "heading_deg": 78.0
+       },
+       "dist_goal_m": 4.406,
+       "dist_way_m": 2.613,
+       "bearing_goal_deg": 167.8,
+       "heading_error_deg": 89.8,
+       "fell": false
+      },
+      "rise_m": 4.406,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.095,
+       "y": 0.359,
+       "z": 0.381,
+       "heading_deg": 78.0
+      },
+      "rise_m": 4.406,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 2.613,
+      "rise_m": 4.406,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 135.0,
+      "rise_m": 4.406,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.109,
+        "y": 0.496,
+        "z": 0.39,
+        "heading_deg": 112.9
+       },
+       "dist_goal_m": 4.365,
+       "dist_way_m": 2.508,
+       "bearing_goal_deg": 169.5,
+       "heading_error_deg": 56.6,
+       "fell": false
+      },
+      "rise_m": 4.365,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.109,
+       "y": 0.496,
+       "z": 0.39,
+       "heading_deg": 112.9
+      },
+      "rise_m": 4.365,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 2.508,
+      "rise_m": 4.365,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 137.0,
+      "rise_m": 4.365,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.536,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.539,
+        "y": 0.946,
+        "z": 0.385,
+        "heading_deg": 143.4
+       },
+       "dist_goal_m": 3.877,
+       "dist_way_m": 1.887,
+       "bearing_goal_deg": 174.9,
+       "heading_error_deg": 31.5,
+       "fell": false
+      },
+      "rise_m": 3.877,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.539,
+       "y": 0.946,
+       "z": 0.385,
+       "heading_deg": 143.4
+      },
+      "rise_m": 3.877,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 1.887,
+      "rise_m": 3.877,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 138.0,
+      "rise_m": 3.877,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.12,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.115,
+        "y": 1.374,
+        "z": 0.384,
+        "heading_deg": 138.8
+       },
+       "dist_goal_m": 3.287,
+       "dist_way_m": 1.175,
+       "bearing_goal_deg": -178.6,
+       "heading_error_deg": 42.6,
+       "fell": false
+      },
+      "rise_m": 3.287,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.115,
+       "y": 1.374,
+       "z": 0.384,
+       "heading_deg": 138.8
+      },
+      "rise_m": 3.287,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 1.175,
+      "rise_m": 3.287,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 134.8,
+      "rise_m": 3.287,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.089,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.643,
+        "y": 1.859,
+        "z": 0.388,
+        "heading_deg": 133.8
+       },
+       "dist_goal_m": 2.816,
+       "dist_way_m": 0.46,
+       "bearing_goal_deg": -168.4,
+       "heading_error_deg": 57.8,
+       "fell": false
+      },
+      "rise_m": 2.816,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.643,
+       "y": 1.859,
+       "z": 0.388,
+       "heading_deg": 133.8
+      },
+      "rise_m": 2.816,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 0.46,
+      "rise_m": 2.816,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 130.6,
+      "rise_m": 2.816,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.071,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.877,
+        "y": 2.139,
+        "z": 0.393,
+        "heading_deg": 129.0
+       },
+       "dist_goal_m": 2.663,
+       "dist_way_m": 0.095,
+       "bearing_goal_deg": -161.4,
+       "heading_error_deg": 69.6,
+       "fell": false
+      },
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.877,
+       "y": 2.139,
+       "z": 0.393,
+       "heading_deg": 129.0
+      },
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": -1.942,
+       "y": 2.208
+      },
+      "result": 0.095,
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.877,
+       "y": 2.139,
+       "z": 0.393,
+       "heading_deg": 129.0
+      },
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 2.663,
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -161.4,
+      "rise_m": 2.663,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.935,
+        "y": 2.178,
+        "z": 0.386,
+        "heading_deg": 158.6
+       },
+       "dist_goal_m": 2.621,
+       "dist_way_m": 0.031,
+       "bearing_goal_deg": -160.2,
+       "heading_error_deg": 41.2,
+       "fell": false
+      },
+      "rise_m": 2.621,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.935,
+       "y": 2.178,
+       "z": 0.386,
+       "heading_deg": 158.6
+      },
+      "rise_m": 2.621,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 2.621,
+      "rise_m": 2.621,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -160.2,
+      "rise_m": 2.621,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.062,
+        "y": 2.19,
+        "z": 0.392,
+        "heading_deg": -166.9
+       },
+       "dist_goal_m": 2.506,
+       "dist_way_m": 0.121,
+       "bearing_goal_deg": -159.0,
+       "heading_error_deg": 7.9,
+       "fell": false
+      },
+      "rise_m": 2.506,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.062,
+       "y": 2.19,
+       "z": 0.392,
+       "heading_deg": -166.9
+      },
+      "rise_m": 2.506,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 2.506,
+      "rise_m": 2.506,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -159.0,
+      "rise_m": 2.506,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.176,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -2.634,
+        "y": 1.946,
+        "z": 0.385,
+        "heading_deg": -155.6
+       },
+       "dist_goal_m": 1.884,
+       "dist_way_m": 0.74,
+       "bearing_goal_deg": -159.7,
+       "heading_error_deg": -4.1,
+       "fell": false
+      },
+      "rise_m": 1.884,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -2.634,
+       "y": 1.946,
+       "z": 0.385,
+       "heading_deg": -155.6
+      },
+      "rise_m": 1.884,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 1.884,
+      "rise_m": 1.884,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -159.7,
+      "rise_m": 1.884,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.091,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -3.287,
+        "y": 1.65,
+        "z": 0.385,
+        "heading_deg": -159.7
+       },
+       "dist_goal_m": 1.17,
+       "dist_way_m": 1.456,
+       "bearing_goal_deg": -162.1,
+       "heading_error_deg": -2.4,
+       "fell": false
+      },
+      "rise_m": 1.17,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -3.287,
+       "y": 1.65,
+       "z": 0.385,
+       "heading_deg": -159.7
+      },
+      "rise_m": 1.17,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 1.17,
+      "rise_m": 1.17,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -162.1,
+      "rise_m": 1.17,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.053,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -3.961,
+        "y": 1.408,
+        "z": 0.388,
+        "heading_deg": -162.9
+       },
+       "dist_goal_m": 0.455,
+       "dist_way_m": 2.172,
+       "bearing_goal_deg": -165.1,
+       "heading_error_deg": -2.2,
+       "fell": false
+      },
+      "rise_m": 0.455,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -3.961,
+       "y": 1.408,
+       "z": 0.388,
+       "heading_deg": -162.9
+      },
+      "rise_m": 0.455,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 0.455,
+      "rise_m": 0.455,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": -165.1,
+      "rise_m": 0.455,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.049,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -4.315,
+        "y": 1.32,
+        "z": 0.391,
+        "heading_deg": -166.2
+       },
+       "dist_goal_m": 0.091,
+       "dist_way_m": 2.534,
+       "bearing_goal_deg": -161.4,
+       "heading_error_deg": 4.8,
+       "fell": false
+      },
+      "rise_m": 0.091,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -4.315,
+       "y": 1.32,
+       "z": 0.391,
+       "heading_deg": -166.2
+      },
+      "rise_m": 0.091,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 0.091,
+      "rise_m": 0.091,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -4.328,
+        "y": 1.328,
+        "z": 0.396,
+        "heading_deg": -165.4
+       },
+       "dist_goal_m": 0.082,
+       "dist_way_m": 2.543,
+       "bearing_goal_deg": -153.1,
+       "heading_error_deg": 12.3,
+       "fell": false
+      },
+      "rise_m": 0.082,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.401,
+       "y": 1.291,
+       "radius": 0.5
+      },
+      "rise_m": 0.082,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -4.401,
+       "y": 1.291,
+       "radius": 0.5
+      },
+      "rise_m": 0.082,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": -4.401,
+       "y": 1.291
+      },
+      "result": 0.082,
+      "rise_m": 0.082,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.08"
+      },
+      "result": null,
+      "rise_m": 0.082,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 750,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 9.8
+   },
+   {
+    "seed": 105,
+    "start": {
+     "seed": 105,
+     "start": {
+      "x": 0.502,
+      "y": -0.369,
+      "z": 0.387,
+      "heading_deg": -77.5
+     },
+     "goal": {
+      "x": -2.038,
+      "y": 2.074,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": 0.272,
+      "y": 1.933,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.211,
+     "waypoint_min_dist_m": 0.088,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 16,
+     "final_pose": {
+      "x": -1.827,
+      "y": 2.073,
+      "z": 0.393,
+      "heading_deg": 169.5
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": 0.272,
+       "y": 1.933,
+       "radius": 0.6
+      },
+      "rise_m": 3.524,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.038,
+       "y": 2.074,
+       "radius": 0.5
+      },
+      "rise_m": 3.524,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.502,
+       "y": -0.369,
+       "z": 0.387,
+       "heading_deg": -77.5
+      },
+      "rise_m": 3.524,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.313,
+      "rise_m": 3.524,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 95.7,
+      "rise_m": 3.524,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.53,
+        "y": -0.39,
+        "z": 0.367,
+        "heading_deg": -51.3
+       },
+       "dist_goal_m": 3.559,
+       "dist_way_m": 2.337,
+       "bearing_goal_deg": 136.2,
+       "heading_error_deg": -172.5,
+       "fell": false
+      },
+      "rise_m": 3.559,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.53,
+       "y": -0.39,
+       "z": 0.367,
+       "heading_deg": -51.3
+      },
+      "rise_m": 3.559,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.337,
+      "rise_m": 3.559,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 96.3,
+      "rise_m": 3.559,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.497,
+        "y": -0.392,
+        "z": 0.347,
+        "heading_deg": -30.8
+       },
+       "dist_goal_m": 3.537,
+       "dist_way_m": 2.336,
+       "bearing_goal_deg": 135.8,
+       "heading_error_deg": 166.6,
+       "fell": false
+      },
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.497,
+       "y": -0.392,
+       "z": 0.347,
+       "heading_deg": -30.8
+      },
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.336,
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 95.5,
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.523,
+        "y": -0.449,
+        "z": 0.383,
+        "heading_deg": -0.9
+       },
+       "dist_goal_m": 3.595,
+       "dist_way_m": 2.395,
+       "bearing_goal_deg": 135.4,
+       "heading_error_deg": 136.3,
+       "fell": false
+      },
+      "rise_m": 3.595,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.523,
+       "y": -0.449,
+       "z": 0.383,
+       "heading_deg": -0.9
+      },
+      "rise_m": 3.595,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.395,
+      "rise_m": 3.595,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 96.0,
+      "rise_m": 3.595,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.65,
+        "y": -0.409,
+        "z": 0.386,
+        "heading_deg": 32.3
+       },
+       "dist_goal_m": 3.659,
+       "dist_way_m": 2.372,
+       "bearing_goal_deg": 137.3,
+       "heading_error_deg": 105.0,
+       "fell": false
+      },
+      "rise_m": 3.659,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.65,
+       "y": -0.409,
+       "z": 0.386,
+       "heading_deg": 32.3
+      },
+      "rise_m": 3.659,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.372,
+      "rise_m": 3.659,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 99.2,
+      "rise_m": 3.659,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.733,
+        "y": -0.34,
+        "z": 0.384,
+        "heading_deg": 64.3
+       },
+       "dist_goal_m": 3.675,
+       "dist_way_m": 2.319,
+       "bearing_goal_deg": 138.9,
+       "heading_error_deg": 74.6,
+       "fell": false
+      },
+      "rise_m": 3.675,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.733,
+       "y": -0.34,
+       "z": 0.384,
+       "heading_deg": 64.3
+      },
+      "rise_m": 3.675,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.319,
+      "rise_m": 3.675,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 101.5,
+      "rise_m": 3.675,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.769,
+        "y": -0.236,
+        "z": 0.386,
+        "heading_deg": 97.2
+       },
+       "dist_goal_m": 3.635,
+       "dist_way_m": 2.225,
+       "bearing_goal_deg": 140.5,
+       "heading_error_deg": 43.3,
+       "fell": false
+      },
+      "rise_m": 3.635,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.769,
+       "y": -0.236,
+       "z": 0.386,
+       "heading_deg": 97.2
+      },
+      "rise_m": 3.635,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 2.225,
+      "rise_m": 3.635,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 102.9,
+      "rise_m": 3.635,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.127,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.599,
+        "y": 0.366,
+        "z": 0.385,
+        "heading_deg": 106.3
+       },
+       "dist_goal_m": 3.142,
+       "dist_way_m": 1.601,
+       "bearing_goal_deg": 147.1,
+       "heading_error_deg": 40.8,
+       "fell": false
+      },
+      "rise_m": 3.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.599,
+       "y": 0.366,
+       "z": 0.385,
+       "heading_deg": 106.3
+      },
+      "rise_m": 3.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 1.601,
+      "rise_m": 3.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 101.8,
+      "rise_m": 3.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.1,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.414,
+        "y": 1.06,
+        "z": 0.384,
+        "heading_deg": 101.3
+       },
+       "dist_goal_m": 2.653,
+       "dist_way_m": 0.884,
+       "bearing_goal_deg": 157.5,
+       "heading_error_deg": 56.2,
+       "fell": false
+      },
+      "rise_m": 2.653,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.414,
+       "y": 1.06,
+       "z": 0.384,
+       "heading_deg": 101.3
+      },
+      "rise_m": 2.653,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 0.884,
+      "rise_m": 2.653,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 99.2,
+      "rise_m": 2.653,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.047,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.363,
+        "y": 1.422,
+        "z": 0.387,
+        "heading_deg": 97.5
+       },
+       "dist_goal_m": 2.488,
+       "dist_way_m": 0.519,
+       "bearing_goal_deg": 164.8,
+       "heading_error_deg": 67.3,
+       "fell": false
+      },
+      "rise_m": 2.488,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.363,
+       "y": 1.422,
+       "z": 0.387,
+       "heading_deg": 97.5
+      },
+      "rise_m": 2.488,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 0.519,
+      "rise_m": 2.488,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 100.1,
+      "rise_m": 2.488,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.058,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.323,
+        "y": 1.732,
+        "z": 0.392,
+        "heading_deg": 99.0
+       },
+       "dist_goal_m": 2.386,
+       "dist_way_m": 0.207,
+       "bearing_goal_deg": 171.8,
+       "heading_error_deg": 72.8,
+       "fell": false
+      },
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.323,
+       "y": 1.732,
+       "z": 0.392,
+       "heading_deg": 99.0
+      },
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": 0.272,
+       "y": 1.933
+      },
+      "result": 0.207,
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.323,
+       "y": 1.732,
+       "z": 0.392,
+       "heading_deg": 99.0
+      },
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 2.386,
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 171.8,
+      "rise_m": 2.386,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.274,
+        "y": 1.834,
+        "z": 0.389,
+        "heading_deg": 130.0
+       },
+       "dist_goal_m": 2.324,
+       "dist_way_m": 0.099,
+       "bearing_goal_deg": 174.1,
+       "heading_error_deg": 44.1,
+       "fell": false
+      },
+      "rise_m": 2.324,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.274,
+       "y": 1.834,
+       "z": 0.389,
+       "heading_deg": 130.0
+      },
+      "rise_m": 2.324,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 2.324,
+      "rise_m": 2.324,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 174.1,
+      "rise_m": 2.324,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.167,
+        "y": 1.855,
+        "z": 0.391,
+        "heading_deg": 164.2
+       },
+       "dist_goal_m": 2.216,
+       "dist_way_m": 0.131,
+       "bearing_goal_deg": 174.3,
+       "heading_error_deg": 10.1,
+       "fell": false
+      },
+      "rise_m": 2.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.167,
+       "y": 1.855,
+       "z": 0.391,
+       "heading_deg": 164.2
+      },
+      "rise_m": 2.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 2.216,
+      "rise_m": 2.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 174.3,
+      "rise_m": 2.216,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.224,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.473,
+        "y": 1.892,
+        "z": 0.385,
+        "heading_deg": 178.6
+       },
+       "dist_goal_m": 1.576,
+       "dist_way_m": 0.746,
+       "bearing_goal_deg": 173.4,
+       "heading_error_deg": -5.2,
+       "fell": false
+      },
+      "rise_m": 1.576,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.473,
+       "y": 1.892,
+       "z": 0.385,
+       "heading_deg": 178.6
+      },
+      "rise_m": 1.576,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 1.576,
+      "rise_m": 1.576,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 173.4,
+      "rise_m": 1.576,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.116,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.19,
+        "y": 1.92,
+        "z": 0.386,
+        "heading_deg": 173.4
+       },
+       "dist_goal_m": 0.862,
+       "dist_way_m": 1.462,
+       "bearing_goal_deg": 169.7,
+       "heading_error_deg": -3.7,
+       "fell": false
+      },
+      "rise_m": 0.862,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.19,
+       "y": 1.92,
+       "z": 0.386,
+       "heading_deg": 173.4
+      },
+      "rise_m": 0.862,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 0.862,
+      "rise_m": 0.862,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 169.7,
+      "rise_m": 0.862,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.082,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.556,
+        "y": 1.986,
+        "z": 0.387,
+        "heading_deg": 168.1
+       },
+       "dist_goal_m": 0.49,
+       "dist_way_m": 1.829,
+       "bearing_goal_deg": 169.7,
+       "heading_error_deg": 1.6,
+       "fell": false
+      },
+      "rise_m": 0.49,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.556,
+       "y": 1.986,
+       "z": 0.387,
+       "heading_deg": 168.1
+      },
+      "rise_m": 0.49,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 0.49,
+      "rise_m": 0.49,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "heading_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 169.7,
+      "rise_m": 0.49,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.036,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.844,
+        "y": 2.056,
+        "z": 0.388,
+        "heading_deg": 167.5
+       },
+       "dist_goal_m": 0.195,
+       "dist_way_m": 2.12,
+       "bearing_goal_deg": 174.7,
+       "heading_error_deg": 7.2,
+       "fell": false
+      },
+      "rise_m": 0.195,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -1.844,
+       "y": 2.056,
+       "z": 0.388,
+       "heading_deg": 167.5
+      },
+      "rise_m": 0.195,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 16.0,
+      "step": 800,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 0.195,
+      "rise_m": 0.195,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 17.0,
+      "step": 850,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -1.854,
+        "y": 2.074,
+        "z": 0.392,
+        "heading_deg": 168.0
+       },
+       "dist_goal_m": 0.184,
+       "dist_way_m": 2.131,
+       "bearing_goal_deg": 180.0,
+       "heading_error_deg": 12.0,
+       "fell": false
+      },
+      "rise_m": 0.184,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 17.0,
+      "step": 850,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.038,
+       "y": 2.074,
+       "radius": 0.5
+      },
+      "rise_m": 0.184,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 17.0,
+      "step": 850,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": -2.038,
+       "y": 2.074,
+       "radius": 0.5
+      },
+      "rise_m": 0.184,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 17.0,
+      "step": 850,
+      "call": "distance_to",
+      "args": {
+       "x": -2.038,
+       "y": 2.074
+      },
+      "result": 0.184,
+      "rise_m": 0.184,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 17.0,
+      "step": 850,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.18"
+      },
+      "result": null,
+      "rise_m": 0.184,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 900,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 11.8
+   },
+   {
+    "seed": 106,
+    "start": {
+     "seed": 106,
+     "start": {
+      "x": 0.017,
+      "y": -0.014,
+      "z": 0.389,
+      "heading_deg": -167.9
+     },
+     "goal": {
+      "x": 1.081,
+      "y": 4.206,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": 2.004,
+      "y": 1.729,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.164,
+     "waypoint_min_dist_m": 0.058,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 14,
+     "final_pose": {
+      "x": 1.169,
+      "y": 4.068,
+      "z": 0.396,
+      "heading_deg": 109.5
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": 2.004,
+       "y": 1.729,
+       "radius": 0.6
+      },
+      "rise_m": 4.352,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 1.081,
+       "y": 4.206,
+       "radius": 0.5
+      },
+      "rise_m": 4.352,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.017,
+       "y": -0.014,
+       "z": 0.389,
+       "heading_deg": -167.9
+      },
+      "rise_m": 4.352,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 2.643,
+      "rise_m": 4.352,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 41.3,
+      "rise_m": 4.352,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.084,
+        "y": 0.0,
+        "z": 0.383,
+        "heading_deg": 160.1
+       },
+       "dist_goal_m": 4.364,
+       "dist_way_m": 2.711,
+       "bearing_goal_deg": 74.5,
+       "heading_error_deg": -85.6,
+       "fell": false
+      },
+      "rise_m": 4.364,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.084,
+       "y": 0.0,
+       "z": 0.383,
+       "heading_deg": 160.1
+      },
+      "rise_m": 4.364,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 2.711,
+      "rise_m": 4.364,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 39.6,
+      "rise_m": 4.364,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.179,
+        "y": 0.093,
+        "z": 0.382,
+        "heading_deg": 127.0
+       },
+       "dist_goal_m": 4.302,
+       "dist_way_m": 2.728,
+       "bearing_goal_deg": 73.0,
+       "heading_error_deg": -54.0,
+       "fell": false
+      },
+      "rise_m": 4.302,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.179,
+       "y": 0.093,
+       "z": 0.382,
+       "heading_deg": 127.0
+      },
+      "rise_m": 4.302,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 2.728,
+      "rise_m": 4.302,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 36.8,
+      "rise_m": 4.302,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.176,
+        "y": 0.228,
+        "z": 0.385,
+        "heading_deg": 93.4
+       },
+       "dist_goal_m": 4.172,
+       "dist_way_m": 2.647,
+       "bearing_goal_deg": 72.5,
+       "heading_error_deg": -20.9,
+       "fell": false
+      },
+      "rise_m": 4.172,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.176,
+       "y": 0.228,
+       "z": 0.385,
+       "heading_deg": 93.4
+      },
+      "rise_m": 4.172,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 2.647,
+      "rise_m": 4.172,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 34.5,
+      "rise_m": 4.172,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": -0.109,
+        "y": 0.336,
+        "z": 0.384,
+        "heading_deg": 60.1
+       },
+       "dist_goal_m": 4.049,
+       "dist_way_m": 2.531,
+       "bearing_goal_deg": 72.9,
+       "heading_error_deg": 12.8,
+       "fell": false
+      },
+      "rise_m": 4.049,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": -0.109,
+       "y": 0.336,
+       "z": 0.384,
+       "heading_deg": 60.1
+      },
+      "rise_m": 4.049,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 2.531,
+      "rise_m": 4.049,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 33.4,
+      "rise_m": 4.049,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.593,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.315,
+        "y": 0.759,
+        "z": 0.383,
+        "heading_deg": 28.6
+       },
+       "dist_goal_m": 3.531,
+       "dist_way_m": 1.948,
+       "bearing_goal_deg": 77.5,
+       "heading_error_deg": 48.9,
+       "fell": false
+      },
+      "rise_m": 3.531,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.315,
+       "y": 0.759,
+       "z": 0.383,
+       "heading_deg": 28.6
+      },
+      "rise_m": 3.531,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 1.948,
+      "rise_m": 3.531,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 29.9,
+      "rise_m": 3.531,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.029,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.942,
+        "y": 1.107,
+        "z": 0.385,
+        "heading_deg": 28.4
+       },
+       "dist_goal_m": 3.102,
+       "dist_way_m": 1.231,
+       "bearing_goal_deg": 87.4,
+       "heading_error_deg": 59.0,
+       "fell": false
+      },
+      "rise_m": 3.102,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.942,
+       "y": 1.107,
+       "z": 0.385,
+       "heading_deg": 28.4
+      },
+      "rise_m": 3.102,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 1.231,
+      "rise_m": 3.102,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 30.4,
+      "rise_m": 3.102,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.044,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.556,
+        "y": 1.477,
+        "z": 0.387,
+        "heading_deg": 31.0
+       },
+       "dist_goal_m": 2.77,
+       "dist_way_m": 0.514,
+       "bearing_goal_deg": 99.9,
+       "heading_error_deg": 68.9,
+       "fell": false
+      },
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.556,
+       "y": 1.477,
+       "z": 0.387,
+       "heading_deg": 31.0
+      },
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 0.514,
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 29.4,
+      "rise_m": 2.77,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.036,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.871,
+        "y": 1.658,
+        "z": 0.392,
+        "heading_deg": 28.8
+       },
+       "dist_goal_m": 2.668,
+       "dist_way_m": 0.151,
+       "bearing_goal_deg": 107.2,
+       "heading_error_deg": 78.4,
+       "fell": false
+      },
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.871,
+       "y": 1.658,
+       "z": 0.392,
+       "heading_deg": 28.8
+      },
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": 2.004,
+       "y": 1.729
+      },
+      "result": 0.151,
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.871,
+       "y": 1.658,
+       "z": 0.392,
+       "heading_deg": 28.8
+      },
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 2.668,
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 107.2,
+      "rise_m": 2.668,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.935,
+        "y": 1.71,
+        "z": 0.385,
+        "heading_deg": 59.5
+       },
+       "dist_goal_m": 2.638,
+       "dist_way_m": 0.072,
+       "bearing_goal_deg": 108.9,
+       "heading_error_deg": 49.4,
+       "fell": false
+      },
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.935,
+       "y": 1.71,
+       "z": 0.385,
+       "heading_deg": 59.5
+      },
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 2.638,
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 108.9,
+      "rise_m": 2.638,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": 0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.987,
+        "y": 1.808,
+        "z": 0.387,
+        "heading_deg": 90.7
+       },
+       "dist_goal_m": 2.563,
+       "dist_way_m": 0.081,
+       "bearing_goal_deg": 110.7,
+       "heading_error_deg": 20.0,
+       "fell": false
+      },
+      "rise_m": 2.563,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.987,
+       "y": 1.808,
+       "z": 0.387,
+       "heading_deg": 90.7
+      },
+      "rise_m": 2.563,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 2.563,
+      "rise_m": 2.563,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 110.7,
+      "rise_m": 2.563,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.444,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.794,
+        "y": 2.397,
+        "z": 0.384,
+        "heading_deg": 116.5
+       },
+       "dist_goal_m": 1.944,
+       "dist_way_m": 0.7,
+       "bearing_goal_deg": 111.5,
+       "heading_error_deg": -5.0,
+       "fell": false
+      },
+      "rise_m": 1.944,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.794,
+       "y": 2.397,
+       "z": 0.384,
+       "heading_deg": 116.5
+      },
+      "rise_m": 1.944,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 1.944,
+      "rise_m": 1.944,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 111.5,
+      "rise_m": 1.944,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.111,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.476,
+        "y": 3.043,
+        "z": 0.385,
+        "heading_deg": 111.5
+       },
+       "dist_goal_m": 1.228,
+       "dist_way_m": 1.416,
+       "bearing_goal_deg": 108.8,
+       "heading_error_deg": -2.7,
+       "fell": false
+      },
+      "rise_m": 1.228,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.476,
+       "y": 3.043,
+       "z": 0.385,
+       "heading_deg": 111.5
+      },
+      "rise_m": 1.228,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 1.228,
+      "rise_m": 1.228,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 108.8,
+      "rise_m": 1.228,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.06,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.219,
+        "y": 3.712,
+        "z": 0.386,
+        "heading_deg": 108.0
+       },
+       "dist_goal_m": 0.513,
+       "dist_way_m": 2.133,
+       "bearing_goal_deg": 105.6,
+       "heading_error_deg": -2.4,
+       "fell": false
+      },
+      "rise_m": 0.513,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.219,
+       "y": 3.712,
+       "z": 0.386,
+       "heading_deg": 108.0
+      },
+      "rise_m": 0.513,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 0.513,
+      "rise_m": 0.513,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "heading_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 105.6,
+      "rise_m": 0.513,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.053,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.14,
+        "y": 4.067,
+        "z": 0.389,
+        "heading_deg": 104.4
+       },
+       "dist_goal_m": 0.151,
+       "dist_way_m": 2.493,
+       "bearing_goal_deg": 113.0,
+       "heading_error_deg": 8.6,
+       "fell": false
+      },
+      "rise_m": 0.151,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.14,
+       "y": 4.067,
+       "z": 0.389,
+       "heading_deg": 104.4
+      },
+      "rise_m": 0.151,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 0.151,
+      "rise_m": 0.151,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.155,
+        "y": 4.083,
+        "z": 0.397,
+        "heading_deg": 105.9
+       },
+       "dist_goal_m": 0.144,
+       "dist_way_m": 2.502,
+       "bearing_goal_deg": 121.0,
+       "heading_error_deg": 15.1,
+       "fell": false
+      },
+      "rise_m": 0.144,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 1.081,
+       "y": 4.206,
+       "radius": 0.5
+      },
+      "rise_m": 0.144,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 1.081,
+       "y": 4.206,
+       "radius": 0.5
+      },
+      "rise_m": 0.144,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "distance_to",
+      "args": {
+       "x": 1.081,
+       "y": 4.206
+      },
+      "result": 0.144,
+      "rise_m": 0.144,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.14"
+      },
+      "result": null,
+      "rise_m": 0.144,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 800,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 10.9
+   },
+   {
+    "seed": 107,
+    "start": {
+     "seed": 107,
+     "start": {
+      "x": 0.156,
+      "y": 0.169,
+      "z": 0.382,
+      "heading_deg": 113.5
+     },
+     "goal": {
+      "x": 0.07,
+      "y": -3.702,
+      "radius": 0.5
+     },
+     "waypoint": {
+      "x": 1.613,
+      "y": -1.8,
+      "radius": 0.6
+     },
+     "policy": "model_1499.pt"
+    },
+    "run_status": "ok",
+    "exception": null,
+    "verdict": {
+     "success": true,
+     "failure": null,
+     "final_dist_m": 0.024,
+     "waypoint_min_dist_m": 0.179,
+     "waypoint_passed": true,
+     "fell": false,
+     "n_calls": 14,
+     "final_pose": {
+      "x": 0.07,
+      "y": -3.678,
+      "z": 0.398,
+      "heading_deg": -124.7
+     },
+     "detail": ""
+    },
+    "trace": [
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_waypoint",
+      "args": {},
+      "result": {
+       "x": 1.613,
+       "y": -1.8,
+       "radius": 0.6
+      },
+      "rise_m": 3.872,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 0.07,
+       "y": -3.702,
+       "radius": 0.5
+      },
+      "rise_m": 3.872,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.156,
+       "y": 0.169,
+       "z": 0.382,
+       "heading_deg": 113.5
+      },
+      "rise_m": 3.872,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.449,
+      "rise_m": 3.872,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 0.0,
+      "step": 0,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -53.5,
+      "rise_m": 3.872,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.174,
+        "y": 0.276,
+        "z": 0.383,
+        "heading_deg": 78.7
+       },
+       "dist_goal_m": 3.979,
+       "dist_way_m": 2.526,
+       "bearing_goal_deg": -91.5,
+       "heading_error_deg": -170.2,
+       "fell": false
+      },
+      "rise_m": 3.979,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.174,
+       "y": 0.276,
+       "z": 0.383,
+       "heading_deg": 78.7
+      },
+      "rise_m": 3.979,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.526,
+      "rise_m": 3.979,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 1.0,
+      "step": 50,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -55.3,
+      "rise_m": 3.979,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.259,
+        "y": 0.378,
+        "z": 0.385,
+        "heading_deg": 45.7
+       },
+       "dist_goal_m": 4.084,
+       "dist_way_m": 2.565,
+       "bearing_goal_deg": -92.7,
+       "heading_error_deg": -138.4,
+       "fell": false
+      },
+      "rise_m": 4.084,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.259,
+       "y": 0.378,
+       "z": 0.385,
+       "heading_deg": 45.7
+      },
+      "rise_m": 4.084,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.565,
+      "rise_m": 4.084,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 2.0,
+      "step": 100,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -58.1,
+      "rise_m": 4.084,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.39,
+        "y": 0.405,
+        "z": 0.384,
+        "heading_deg": 13.2
+       },
+       "dist_goal_m": 4.119,
+       "dist_way_m": 2.521,
+       "bearing_goal_deg": -94.5,
+       "heading_error_deg": -107.7,
+       "fell": false
+      },
+      "rise_m": 4.119,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.39,
+       "y": 0.405,
+       "z": 0.384,
+       "heading_deg": 13.2
+      },
+      "rise_m": 4.119,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.521,
+      "rise_m": 4.119,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 3.0,
+      "step": 150,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -61.0,
+      "rise_m": 4.119,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.512,
+        "y": 0.355,
+        "z": 0.382,
+        "heading_deg": -20.1
+       },
+       "dist_goal_m": 4.081,
+       "dist_way_m": 2.42,
+       "bearing_goal_deg": -96.2,
+       "heading_error_deg": -76.1,
+       "fell": false
+      },
+      "rise_m": 4.081,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.512,
+       "y": 0.355,
+       "z": 0.382,
+       "heading_deg": -20.1
+      },
+      "rise_m": 4.081,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.42,
+      "rise_m": 4.081,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 4.0,
+      "step": 200,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -62.9,
+      "rise_m": 4.081,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.586,
+        "y": 0.25,
+        "z": 0.384,
+        "heading_deg": -53.0
+       },
+       "dist_goal_m": 3.986,
+       "dist_way_m": 2.293,
+       "bearing_goal_deg": -97.4,
+       "heading_error_deg": -44.4,
+       "fell": false
+      },
+      "rise_m": 3.986,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.586,
+       "y": 0.25,
+       "z": 0.384,
+       "heading_deg": -53.0
+      },
+      "rise_m": 3.986,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 2.293,
+      "rise_m": 3.986,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 5.0,
+      "step": 250,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -63.4,
+      "rise_m": 3.986,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.231,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.903,
+        "y": -0.264,
+        "z": 0.384,
+        "heading_deg": -66.0
+       },
+       "dist_goal_m": 3.537,
+       "dist_way_m": 1.692,
+       "bearing_goal_deg": -103.6,
+       "heading_error_deg": -37.6,
+       "fell": false
+      },
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.903,
+       "y": -0.264,
+       "z": 0.384,
+       "heading_deg": -66.0
+      },
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 1.692,
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 6.0,
+      "step": 300,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -65.2,
+      "rise_m": 3.537,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.018,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.208,
+        "y": -0.914,
+        "z": 0.385,
+        "heading_deg": -65.9
+       },
+       "dist_goal_m": 3.011,
+       "dist_way_m": 0.974,
+       "bearing_goal_deg": -112.2,
+       "heading_error_deg": -46.3,
+       "fell": false
+      },
+      "rise_m": 3.011,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.208,
+       "y": -0.914,
+       "z": 0.385,
+       "heading_deg": -65.9
+      },
+      "rise_m": 3.011,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 0.974,
+      "rise_m": 3.011,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 7.0,
+      "step": 350,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -65.4,
+      "rise_m": 3.011,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.011,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.342,
+        "y": -1.253,
+        "z": 0.386,
+        "heading_deg": -66.0
+       },
+       "dist_goal_m": 2.76,
+       "dist_way_m": 0.61,
+       "bearing_goal_deg": -117.4,
+       "heading_error_deg": -51.4,
+       "fell": false
+      },
+      "rise_m": 2.76,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.342,
+       "y": -1.253,
+       "z": 0.386,
+       "heading_deg": -66.0
+      },
+      "rise_m": 2.76,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 0.61,
+      "rise_m": 2.76,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 8.0,
+      "step": 400,
+      "call": "heading_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": -63.6,
+      "rise_m": 2.76,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": 0.053,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.464,
+        "y": -1.545,
+        "z": 0.39,
+        "heading_deg": -64.1
+       },
+       "dist_goal_m": 2.568,
+       "dist_way_m": 0.295,
+       "bearing_goal_deg": -122.9,
+       "heading_error_deg": -58.8,
+       "fell": false
+      },
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.464,
+       "y": -1.545,
+       "z": 0.39,
+       "heading_deg": -64.1
+      },
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 1.613,
+       "y": -1.8
+      },
+      "result": 0.295,
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.464,
+       "y": -1.545,
+       "z": 0.39,
+       "heading_deg": -64.1
+      },
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 2.568,
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 9.0,
+      "step": 450,
+      "call": "heading_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": -122.9,
+      "rise_m": 2.568,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "walk",
+      "args": {
+       "vx": 0.15,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.469,
+        "y": -1.67,
+        "z": 0.385,
+        "heading_deg": -95.4
+       },
+       "dist_goal_m": 2.467,
+       "dist_way_m": 0.194,
+       "bearing_goal_deg": -124.5,
+       "heading_error_deg": -29.1,
+       "fell": false
+      },
+      "rise_m": 2.467,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.469,
+       "y": -1.67,
+       "z": 0.385,
+       "heading_deg": -95.4
+      },
+      "rise_m": 2.467,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 2.467,
+      "rise_m": 2.467,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 10.0,
+      "step": 500,
+      "call": "heading_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": -124.5,
+      "rise_m": 2.467,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": -0.6,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 1.211,
+        "y": -2.235,
+        "z": 0.386,
+        "heading_deg": -127.9
+       },
+       "dist_goal_m": 1.858,
+       "dist_way_m": 0.592,
+       "bearing_goal_deg": -127.9,
+       "heading_error_deg": 0.0,
+       "fell": false
+      },
+      "rise_m": 1.858,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 1.211,
+       "y": -2.235,
+       "z": 0.386,
+       "heading_deg": -127.9
+      },
+      "rise_m": 1.858,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 1.858,
+      "rise_m": 1.858,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 11.0,
+      "step": 550,
+      "call": "heading_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": -127.9,
+      "rise_m": 1.858,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.0,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.759,
+        "y": -2.791,
+        "z": 0.386,
+        "heading_deg": -130.0
+       },
+       "dist_goal_m": 1.142,
+       "dist_way_m": 1.308,
+       "bearing_goal_deg": -127.1,
+       "heading_error_deg": 2.9,
+       "fell": false
+      },
+      "rise_m": 1.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.759,
+       "y": -2.791,
+       "z": 0.386,
+       "heading_deg": -130.0
+      },
+      "rise_m": 1.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 1.142,
+      "rise_m": 1.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 12.0,
+      "step": 600,
+      "call": "heading_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": -127.1,
+      "rise_m": 1.142,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "walk",
+      "args": {
+       "vx": 0.7,
+       "vy": 0.0,
+       "wz": 0.064,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.323,
+        "y": -3.366,
+        "z": 0.388,
+        "heading_deg": -126.5
+       },
+       "dist_goal_m": 0.421,
+       "dist_way_m": 2.029,
+       "bearing_goal_deg": -127.0,
+       "heading_error_deg": -0.5,
+       "fell": false
+      },
+      "rise_m": 0.421,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.323,
+       "y": -3.366,
+       "z": 0.388,
+       "heading_deg": -126.5
+      },
+      "rise_m": 0.421,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 0.421,
+      "rise_m": 0.421,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 13.0,
+      "step": 650,
+      "call": "heading_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": -127.0,
+      "rise_m": 0.421,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "walk",
+      "args": {
+       "vx": 0.35,
+       "vy": 0.0,
+       "wz": -0.011,
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.094,
+        "y": -3.666,
+        "z": 0.393,
+        "heading_deg": -127.3
+       },
+       "dist_goal_m": 0.043,
+       "dist_way_m": 2.406,
+       "bearing_goal_deg": -123.7,
+       "heading_error_deg": 3.6,
+       "fell": false
+      },
+      "rise_m": 0.043,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "get_pose",
+      "args": {},
+      "result": {
+       "x": 0.094,
+       "y": -3.666,
+       "z": 0.393,
+       "heading_deg": -127.3
+      },
+      "rise_m": 0.043,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 14.0,
+      "step": 700,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 0.043,
+      "rise_m": 0.043,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "stop",
+      "args": {
+       "seconds": 1.0
+      },
+      "result": {
+       "pose": {
+        "x": 0.068,
+        "y": -3.688,
+        "z": 0.398,
+        "heading_deg": -127.0
+       },
+       "dist_goal_m": 0.014,
+       "dist_way_m": 2.44,
+       "bearing_goal_deg": -81.9,
+       "heading_error_deg": 45.1,
+       "fell": false
+      },
+      "rise_m": 0.014,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 0.07,
+       "y": -3.702,
+       "radius": 0.5
+      },
+      "rise_m": 0.014,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "get_goal",
+      "args": {},
+      "result": {
+       "x": 0.07,
+       "y": -3.702,
+       "radius": 0.5
+      },
+      "rise_m": 0.014,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "distance_to",
+      "args": {
+       "x": 0.07,
+       "y": -3.702
+      },
+      "result": 0.014,
+      "rise_m": 0.014,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     },
+     {
+      "t": 15.0,
+      "step": 750,
+      "call": "log",
+      "args": {
+       "message": "final distance 0.01"
+      },
+      "result": null,
+      "rise_m": 0.014,
+      "moved_xy_m": 0.0,
+      "contacts": {}
+     }
+    ],
+    "sim_steps": 800,
+    "success": true,
+    "attempts_used": 1,
+    "cost_usd": 0.0,
+    "condition": "scripted",
+    "wall_s": 12.3
+   }
+  ]
+ }
+}

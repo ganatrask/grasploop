@@ -1,0 +1,157 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "go2_nav.json",
+   "robot": "go2",
+   "shape": "nav",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 3269.5,
+   "cost_usd": 0.0729
+  }
+ ],
+ "scenarios": 8,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 8,
+   "successes": 8,
+   "rate": 1.0,
+   "ci95": [
+    0.676,
+    1.0
+   ],
+   "first_attempt": 8,
+   "first_rate": 1.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": null,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 10.9,
+   "failures": {}
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 8,
+   "successes": 4,
+   "rate": 0.5,
+   "ci95": [
+    0.215,
+    0.785
+   ],
+   "first_attempt": 4,
+   "first_rate": 0.5,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0148,
+   "cost_per_success_usd": 0.0037,
+   "mean_wall_s": 70.1,
+   "failures": {
+    "not_at_goal": 3,
+    "missed_waypoint": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 8,
+   "successes": 4,
+   "rate": 0.5,
+   "ci95": [
+    0.215,
+    0.785
+   ],
+   "first_attempt": 3,
+   "first_rate": 0.375,
+   "recovered_attempt2": 1,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.2,
+   "mean_attempts": 2.12,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 78.8,
+   "failures": {
+    "not_at_goal": 3,
+    "missed_waypoint": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 8,
+   "successes": 6,
+   "rate": 0.75,
+   "ci95": [
+    0.409,
+    0.929
+   ],
+   "first_attempt": 1,
+   "first_rate": 0.125,
+   "recovered_attempt2": 4,
+   "recovered_attempt3": 1,
+   "recovery_rate": 0.714,
+   "mean_attempts": 2.25,
+   "cost_usd": 0.0581,
+   "cost_per_success_usd": 0.0097,
+   "mean_wall_s": 176.6,
+   "failures": {
+    "not_at_goal": 1,
+    "missed_waypoint": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 8,
+   "diff": 0.25,
+   "ci95": [
+    -0.25,
+    0.75
+   ],
+   "a_only": 3,
+   "b_only": 1,
+   "both": 3,
+   "neither": 1,
+   "separated": false
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 8,
+   "diff": 0.25,
+   "ci95": [
+    -0.25,
+    0.75
+   ],
+   "a_only": 3,
+   "b_only": 1,
+   "both": 3,
+   "neither": 1,
+   "separated": false
+  }
+ ],
+ "reviewer": null,
+ "per_shape": {
+  "go2/nav": {
+   "scripted": "8/8",
+   "oneshot": "4/8",
+   "rerun": "4/8",
+   "physics": "6/8"
+  }
+ }
+}

@@ -1,0 +1,268 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "go2_nav.json",
+   "robot": "go2",
+   "shape": "nav",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 3269.5,
+   "cost_usd": 0.0729
+  },
+  {
+   "file": "g1_nav.json",
+   "robot": "g1",
+   "shape": "nav",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 1482.0,
+   "cost_usd": 0.0476
+  },
+  {
+   "file": "franka_place_cube.json",
+   "robot": "franka",
+   "shape": "place_cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 1648.3,
+   "cost_usd": 0.0634
+  },
+  {
+   "file": "franka_place_box_flat.json",
+   "robot": "franka",
+   "shape": "place_box_flat",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 2145.7,
+   "cost_usd": 0.0747
+  },
+  {
+   "file": "franka_place_box_tall.json",
+   "robot": "franka",
+   "shape": "place_box_tall",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 2743.8,
+   "cost_usd": 0.1154
+  }
+ ],
+ "scenarios": 40,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 40,
+   "successes": 40,
+   "rate": 1.0,
+   "ci95": [
+    0.912,
+    1.0
+   ],
+   "first_attempt": 40,
+   "first_rate": 1.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": null,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 10.3,
+   "failures": {}
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 40,
+   "successes": 13,
+   "rate": 0.325,
+   "ci95": [
+    0.201,
+    0.48
+   ],
+   "first_attempt": 13,
+   "first_rate": 0.325,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.102,
+   "cost_per_success_usd": 0.0078,
+   "mean_wall_s": 65.3,
+   "failures": {
+    "never_lifted": 15,
+    "not_at_goal": 5,
+    "missed_waypoint": 2,
+    "program_error": 2,
+    "placed_off_target": 2,
+    "invalid_program": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 40,
+   "successes": 13,
+   "rate": 0.325,
+   "ci95": [
+    0.201,
+    0.48
+   ],
+   "first_attempt": 12,
+   "first_rate": 0.3,
+   "recovered_attempt2": 1,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.036,
+   "mean_attempts": 2.38,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 33.3,
+   "failures": {
+    "never_lifted": 15,
+    "not_at_goal": 5,
+    "missed_waypoint": 2,
+    "program_error": 2,
+    "placed_off_target": 2,
+    "invalid_program": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 40,
+   "successes": 25,
+   "rate": 0.625,
+   "ci95": [
+    0.47,
+    0.758
+   ],
+   "first_attempt": 10,
+   "first_rate": 0.25,
+   "recovered_attempt2": 11,
+   "recovered_attempt3": 4,
+   "recovery_rate": 0.5,
+   "mean_attempts": 2.23,
+   "cost_usd": 0.2721,
+   "cost_per_success_usd": 0.0109,
+   "mean_wall_s": 166.2,
+   "failures": {
+    "placed_off_target": 5,
+    "never_lifted": 3,
+    "invalid_program": 3,
+    "not_at_goal": 2,
+    "missed_waypoint": 2
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 40,
+   "diff": 0.3,
+   "ci95": [
+    0.125,
+    0.475
+   ],
+   "a_only": 14,
+   "b_only": 2,
+   "both": 11,
+   "neither": 13,
+   "separated": true
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 40,
+   "diff": 0.3,
+   "ci95": [
+    0.125,
+    0.475
+   ],
+   "a_only": 14,
+   "b_only": 2,
+   "both": 11,
+   "neither": 13,
+   "separated": true
+  }
+ ],
+ "reviewer": null,
+ "per_shape": {
+  "franka/place_box_flat": {
+   "scripted": "8/8",
+   "oneshot": "3/8",
+   "rerun": "3/8",
+   "physics": "5/8"
+  },
+  "franka/place_box_tall": {
+   "scripted": "8/8",
+   "oneshot": "0/8",
+   "rerun": "0/8",
+   "physics": "1/8"
+  },
+  "franka/place_cube": {
+   "scripted": "8/8",
+   "oneshot": "4/8",
+   "rerun": "4/8",
+   "physics": "7/8"
+  },
+  "g1/nav": {
+   "scripted": "8/8",
+   "oneshot": "2/8",
+   "rerun": "2/8",
+   "physics": "6/8"
+  },
+  "go2/nav": {
+   "scripted": "8/8",
+   "oneshot": "4/8",
+   "rerun": "4/8",
+   "physics": "6/8"
+  }
+ }
+}

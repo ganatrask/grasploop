@@ -1,0 +1,48 @@
+[bench] start Wed Oct 28 01:48:31 AM PDT 2026  shapes=[cube box_flat sphere_s box_tall capsule_s sphere_m] allegro=[] seeds=8 from 100 model=lightning reasoning=none
+[bench] franka_cube: start 01:48:31
+[bench] franka_cube: exit 0 at 01:55:26: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 2, "n": 8, "rate": 0.25, "ci95": [0.071, 0.591], "mean_attempts": 1.0, "cost_usd": 0.001, "cost_per_success_usd": 0.0005, "infra_errors": 0}, "rerun": {"successes": 2, "n": 8, "rate": 0.25, "ci95": 
+[bench] franka_box_flat: start 01:55:26
+[bench] franka_box_flat: exit 0 at 02:02:43: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 2, "n": 8, "rate": 0.25, "ci95": [0.071, 0.591], "mean_attempts": 1.0, "cost_usd": 0.001, "cost_per_success_usd": 0.0005, "infra_errors": 0}, "rerun": {"successes": 2, "n": 8, "rate": 0.25, "ci95": 
+[bench] franka_sphere_s: start 02:02:43
+[bench] franka_sphere_s: exit 0 at 02:12:30: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.001, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 
+[bench] franka_box_tall: start 02:12:30
+[bench] franka_box_tall: exit 0 at 02:22:35: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 2, "n": 8, "rate": 0.25, "ci95": [0.071, 0.591], "mean_attempts": 1.0, "cost_usd": 0.0009, "cost_per_success_usd": 0.0005, "infra_errors": 0}, "rerun": {"successes": 2, "n": 8, "rate": 0.25, "ci95":
+[bench] franka_capsule_s: start 02:22:35
+[bench] franka_capsule_s: exit 0 at 02:32:27: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.0012, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0,
+[bench] franka_sphere_m: start 02:32:27
+[bench] franka_sphere_m: exit 0 at 02:47:40: [grid] summary: {"scripted": {"successes": 3, "n": 8, "rate": 0.375, "ci95": [0.137, 0.694], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.0008, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [
+| shape | model | condition | success | 95% CI | mean attempts | $ total | $ / success |
+|---|---|---|---|---|---|---|---|
+| box_flat | Nemotron-3_5-Lightning | scripted | 8/8 (100%) | 0.68–1.00 | 1.0 | 0.0000 | 0.0000 |
+| box_flat | Nemotron-3_5-Lightning | oneshot | 2/8 (25%) | 0.07–0.59 | 1.0 | 0.0010 | 0.0005 |
+| box_flat | Nemotron-3_5-Lightning | rerun | 2/8 (25%) | 0.07–0.59 | 2.5 | 0.0000 | 0.0000 |
+| box_flat | Nemotron-3_5-Lightning | physics | 2/8 (25%) | 0.07–0.59 | 2.75 | 0.0037 | 0.0019 |
+| box_flat | Nemotron-3_5-Lightning | vision | 6/8 (75%) | 0.41–0.93 | 1.75 | 0.0069 | 0.0011 |
+| box_tall | Nemotron-3_5-Lightning | scripted | 8/8 (100%) | 0.68–1.00 | 1.0 | 0.0000 | 0.0000 |
+| box_tall | Nemotron-3_5-Lightning | oneshot | 2/8 (25%) | 0.07–0.59 | 1.0 | 0.0009 | 0.0005 |
+| box_tall | Nemotron-3_5-Lightning | rerun | 2/8 (25%) | 0.07–0.59 | 2.5 | 0.0000 | 0.0000 |
+| box_tall | Nemotron-3_5-Lightning | physics | 2/8 (25%) | 0.07–0.59 | 2.75 | 0.0039 | 0.0019 |
+| box_tall | Nemotron-3_5-Lightning | vision | 4/8 (50%) | 0.21–0.79 | 2.38 | 0.0133 | 0.0033 |
+| capsule_s | Nemotron-3_5-Lightning | scripted | 8/8 (100%) | 0.68–1.00 | 1.0 | 0.0000 | 0.0000 |
+| capsule_s | Nemotron-3_5-Lightning | oneshot | 0/8 (0%) | 0.00–0.32 | 1.0 | 0.0012 | — |
+| capsule_s | Nemotron-3_5-Lightning | rerun | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0000 | — |
+| capsule_s | Nemotron-3_5-Lightning | physics | 1/8 (12%) | 0.02–0.47 | 2.75 | 0.0042 | 0.0042 |
+| capsule_s | Nemotron-3_5-Lightning | vision | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0189 | — |
+| cube | Nemotron-3_5-Lightning | scripted | 8/8 (100%) | 0.68–1.00 | 1.0 | 0.0000 | 0.0000 |
+| cube | Nemotron-3_5-Lightning | oneshot | 2/8 (25%) | 0.07–0.59 | 1.0 | 0.0010 | 0.0005 |
+| cube | Nemotron-3_5-Lightning | rerun | 2/8 (25%) | 0.07–0.59 | 2.5 | 0.0000 | 0.0000 |
+| cube | Nemotron-3_5-Lightning | physics | 7/8 (88%) | 0.53–0.98 | 1.5 | 0.0016 | 0.0002 |
+| cube | Nemotron-3_5-Lightning | vision | 7/8 (88%) | 0.53–0.98 | 1.75 | 0.0077 | 0.0011 |
+| sphere_m | Nemotron-3_5-Lightning | scripted | 3/8 (38%) | 0.14–0.69 | 1.0 | 0.0000 | 0.0000 |
+| sphere_m | Nemotron-3_5-Lightning | oneshot | 0/8 (0%) | 0.00–0.32 | 1.0 | 0.0008 | — |
+| sphere_m | Nemotron-3_5-Lightning | rerun | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0000 | — |
+| sphere_m | Nemotron-3_5-Lightning | physics | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0038 | — |
+| sphere_m | Nemotron-3_5-Lightning | vision | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0187 | — |
+| sphere_s | Nemotron-3_5-Lightning | scripted | 8/8 (100%) | 0.68–1.00 | 1.0 | 0.0000 | 0.0000 |
+| sphere_s | Nemotron-3_5-Lightning | oneshot | 0/8 (0%) | 0.00–0.32 | 1.0 | 0.0010 | — |
+| sphere_s | Nemotron-3_5-Lightning | rerun | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0000 | — |
+| sphere_s | Nemotron-3_5-Lightning | physics | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0042 | — |
+| sphere_s | Nemotron-3_5-Lightning | vision | 0/8 (0%) | 0.00–0.32 | 3.0 | 0.0184 | — |
+
+-> _logs/bench_nothink/report/index.html
+[bench] report -> _logs/bench_nothink/report/index.html

@@ -1,0 +1,23 @@
+[bench] start Tue Oct 27 08:47:52 PM PDT 2026  shapes=[cube box_flat sphere_s box_tall capsule_s sphere_m] allegro=[cube] seeds=8 from 100 model=lightning reasoning=default
+[bench] franka_cube: exists, skipping
+[bench] franka_box_flat: exists, skipping
+[bench] franka_sphere_s: start 20:47:52
+[bench] franka_sphere_s: exit 0 at 21:52:49: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.0108, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0,
+[bench] franka_box_tall: start 21:52:49
+[bench] franka_box_tall: exit 0 at 22:48:32: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 1, "n": 8, "rate": 0.125, "ci95": [0.022, 0.471], "mean_attempts": 1.0, "cost_usd": 0.0124, "cost_per_success_usd": 0.0124, "infra_errors": 0}, "rerun": {"successes": 1, "n": 8, "rate": 0.125, "ci95
+[bench] franka_capsule_s: start 22:48:32
+[bench] franka_capsule_s: exit 0 at 23:40:49: [grid] summary: {"scripted": {"successes": 8, "n": 8, "rate": 1.0, "ci95": [0.676, 1.0], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 4, "n": 8, "rate": 0.5, "ci95": [0.215, 0.785], "mean_attempts": 1.0, "cost_usd": 0.015, "cost_per_success_usd": 0.0038, "infra_errors": 0}, "rerun": {"successes": 4, "n": 8, "rate": 0.5, "ci95": [0
+[bench] franka_sphere_m: start 23:40:49
+[bench] franka_sphere_m: exit 0 at 00:54:35: [grid] summary: {"scripted": {"successes": 3, "n": 8, "rate": 0.375, "ci95": [0.137, 0.694], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.0079, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [
+[bench] allegro_cube: start 00:54:35
+[bench] allegro_cube: exit 0 at 01:45:15: [grid] summary: {"scripted": {"successes": 7, "n": 8, "rate": 0.875, "ci95": [0.529, 0.978], "mean_attempts": 1.0, "cost_usd": 0.0, "cost_per_success_usd": 0.0, "infra_errors": 0}, "oneshot": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0.0, 0.324], "mean_attempts": 1.0, "cost_usd": 0.017, "cost_per_success_usd": null, "infra_errors": 0}, "rerun": {"successes": 0, "n": 8, "rate": 0.0, "ci95": [0
+Traceback (most recent call last):
+  File "/home/shyam/projects/sim/softgrip/eval/report.py", line 113, in <module>
+    main()
+  File "/home/shyam/projects/sim/softgrip/eval/report.py", line 95, in main
+    md = summary_md(grids)
+         ^^^^^^^^^^^^^^^^^
+  File "/home/shyam/projects/sim/softgrip/eval/report.py", line 31, in summary_md
+    for cond, s in g["summary"].items():
+                   ~^^^^^^^^^^^
+KeyError: 'summary'

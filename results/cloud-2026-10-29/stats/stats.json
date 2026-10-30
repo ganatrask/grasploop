@@ -1,0 +1,255 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "cube.json",
+   "robot": "franka",
+   "shape": "cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 1694.3,
+   "cost_usd": 0.1341
+  },
+  {
+   "file": "cube16.json",
+   "robot": "franka",
+   "shape": "cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115
+   ],
+   "wall_s": 1452.7,
+   "cost_usd": 0.142
+  }
+ ],
+ "scenarios": 16,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 16,
+   "successes": 16,
+   "rate": 1.0,
+   "ci95": [
+    0.806,
+    1.0
+   ],
+   "first_attempt": 16,
+   "first_rate": 1.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": null,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 7.9,
+   "failures": {}
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 16,
+   "successes": 8,
+   "rate": 0.5,
+   "ci95": [
+    0.28,
+    0.72
+   ],
+   "first_attempt": 8,
+   "first_rate": 0.5,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0256,
+   "cost_per_success_usd": 0.0032,
+   "mean_wall_s": 30.3,
+   "failures": {
+    "slipped": 4,
+    "object_missed": 3,
+    "invalid_program": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 16,
+   "successes": 8,
+   "rate": 0.5,
+   "ci95": [
+    0.28,
+    0.72
+   ],
+   "first_attempt": 8,
+   "first_rate": 0.5,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 2.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 6.5,
+   "failures": {
+    "object_missed": 4,
+    "slipped": 3,
+    "invalid_program": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 16,
+   "successes": 14,
+   "rate": 0.875,
+   "ci95": [
+    0.64,
+    0.965
+   ],
+   "first_attempt": 7,
+   "first_rate": 0.438,
+   "recovered_attempt2": 6,
+   "recovered_attempt3": 1,
+   "recovery_rate": 0.778,
+   "mean_attempts": 1.75,
+   "cost_usd": 0.0595,
+   "cost_per_success_usd": 0.0043,
+   "mean_wall_s": 65.2,
+   "failures": {
+    "invalid_program": 1,
+    "object_missed": 1
+   }
+  },
+  "vision": {
+   "label": "D physics + vision",
+   "n": 16,
+   "successes": 12,
+   "rate": 0.75,
+   "ci95": [
+    0.505,
+    0.898
+   ],
+   "first_attempt": 4,
+   "first_rate": 0.25,
+   "recovered_attempt2": 7,
+   "recovered_attempt3": 1,
+   "recovery_rate": 0.667,
+   "mean_attempts": 2.06,
+   "cost_usd": 0.0813,
+   "cost_per_success_usd": 0.0068,
+   "mean_wall_s": 70.8,
+   "failures": {
+    "slipped": 2,
+    "invalid_program": 1,
+    "ik_not_reached": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 16,
+   "diff": 0.375,
+   "ci95": [
+    0.062,
+    0.688
+   ],
+   "a_only": 7,
+   "b_only": 1,
+   "both": 7,
+   "neither": 1,
+   "separated": true
+  },
+  {
+   "a": "vision",
+   "b": "oneshot",
+   "n": 16,
+   "diff": 0.25,
+   "ci95": [
+    0.0,
+    0.5
+   ],
+   "a_only": 5,
+   "b_only": 1,
+   "both": 7,
+   "neither": 3,
+   "separated": false
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 16,
+   "diff": 0.375,
+   "ci95": [
+    0.062,
+    0.688
+   ],
+   "a_only": 7,
+   "b_only": 1,
+   "both": 7,
+   "neither": 1,
+   "separated": true
+  },
+  {
+   "a": "vision",
+   "b": "physics",
+   "n": 16,
+   "diff": -0.125,
+   "ci95": [
+    -0.438,
+    0.188
+   ],
+   "a_only": 2,
+   "b_only": 4,
+   "both": 10,
+   "neither": 0,
+   "separated": false
+  }
+ ],
+ "reviewer": {
+  "n": 125,
+  "agree": 125,
+  "agreement": 1.0,
+  "false_positive": 0,
+  "false_negative": 0,
+  "abstain": 0,
+  "invalid_json": 0,
+  "cost_usd": 0.1098,
+  "failure_pairs": {
+   "slipped / object_dropped": 17,
+   "object_missed / no_lift_attempted": 12,
+   "object_missed / object_dropped": 11,
+   "invalid_program / no_lift_attempted": 10,
+   "slipped / closed_on_nothing": 6,
+   "object_missed / closed_on_nothing": 5,
+   "slipped / object_pushed_away": 2,
+   "object_missed / object_pushed_away": 1,
+   "dropped_in_hold / object_dropped": 1,
+   "ik_not_reached / no_lift_attempted": 1,
+   "slipped / no_lift_attempted": 1
+  }
+ },
+ "per_shape": {
+  "franka/cube": {
+   "scripted": "16/16",
+   "oneshot": "8/16",
+   "rerun": "8/16",
+   "physics": "14/16",
+   "vision": "12/16"
+  }
+ }
+}

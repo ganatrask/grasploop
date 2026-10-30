@@ -1,0 +1,1984 @@
+{
+ "script": "eval/refilm.py",
+ "record": "_logs/scale/franka_place_cube.json",
+ "robot": "franka",
+ "shape": "place_cube",
+ "model": "nvidia/Nemotron-3_5-Lightning",
+ "summary": {},
+ "episodes": {
+  "physics": [
+   {
+    "seed": 100,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 100,
+      "condition": "physics",
+      "n": 3,
+      "code": "# pick up cube and place on green target marker, then let go\n\nobj = get_object()\ntarget = get_target()\n\nobj_pos = obj['pos']\nobj_half = obj['half_height']\n\n# Approach just above the object's centre so that, when the gripper closes,\n# the fingertips contact the top face of the cube.\n# Object centre z = 0.2799, top face at 0.3049; we set grasp point at 0.2859\n# (\u22486\u202fmm above centre, well below the top surface).\napproach_z = obj_pos[2] + 0.006\napproach_pos = [obj_pos[0], obj_pos[1], approach_z]\n\n# Open the gripper fully before moving in.\nopen_gripper()\n\n# Move the grasp point to the position just above the cube.\nmove_to(approach_pos, quat=None, timeout=4.0)\n\n# Close the gripper to grasp the cube.\nclose_gripper()\n\n# Lift the cube a small distance.\nlift(dz=0.1, timeout=4.0)\n\n# Move to the target marker, stopping a little above the table top (z = 0.255).\ntarget_pos = target['pos']\nrelease_z = 0.255 + 0.02   # 2\u202fcm above table surface\nrelease_pos = [target_pos[0], target_pos[1], release_z]\nmove_to(release_pos, quat=None, timeout=4.0)\n\n# Open the gripper to release the cube onto the table.\nopen_gripper()\n\n# Let the simulation settle.\nwait(0.5)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.006,
+       "max_rise_m": 0.094,
+       "final_rise_m": 0.0054,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 9,
+       "target": {
+        "x": -0.4212,
+        "y": -0.1474,
+        "z": 0.261
+       },
+       "detail": "rests 0.006 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.006,
+       "max_rise_m": 0.094,
+       "final_rise_m": 0.0054,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 9,
+       "target": {
+        "x": -0.4212,
+        "y": -0.1474,
+        "z": 0.261
+       },
+       "detail": "rests 0.006 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5854,
+          -0.0045,
+          0.2799
+         ],
+         "yaw_deg": 97.5
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.4212,
+          -0.1474,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 1.43,
+        "step": 43,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.87,
+        "step": 146,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5854,
+          -0.0045,
+          0.2859
+         ],
+         "quat": null,
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0055,
+         "steps": 93,
+         "error_curve": [
+          0.064,
+          0.035,
+          0.022,
+          0.026,
+          0.022,
+          0.008
+         ],
+         "orient_err_deg": 1.4
+        },
+        "rise_m": -0.0,
+        "moved_xy_m": 0.0137,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 5.47,
+        "step": 164,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0488,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.585,
+          -0.004,
+          0.284
+         ],
+         "object_pos": [
+          -0.571,
+          -0.005,
+          0.28
+         ],
+         "dz_m": 0.004,
+         "dxy_m": 0.014,
+         "object_top_z": 0.305,
+         "palm_z": 0.333
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0142,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.4,
+        "step": 222,
+        "call": "lift",
+        "args": {
+         "dz": 0.1
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0051,
+         "steps": 48,
+         "error_curve": [
+          0.035,
+          0.011,
+          0.009
+         ],
+         "orient_err_deg": 0.7
+        },
+        "rise_m": 0.094,
+        "moved_xy_m": 0.0092,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 10.93,
+        "step": 328,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.4212,
+          -0.1474,
+          0.275
+         ],
+         "quat": null,
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0057,
+         "steps": 96,
+         "error_curve": [
+          0.18,
+          0.107,
+          0.044,
+          0.031,
+          0.028,
+          0.009
+         ],
+         "orient_err_deg": 0.8
+        },
+        "rise_m": 0.005,
+        "moved_xy_m": 0.2225,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.53,
+        "step": 346,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0054,
+        "moved_xy_m": 0.2227,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 12.03,
+        "step": 361,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.0054,
+        "moved_xy_m": 0.2227,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 6.7
+     }
+    ]
+   },
+   {
+    "seed": 102,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 102,
+      "condition": "physics",
+      "n": 2,
+      "code": "obj = get_object()\ntgt = get_target()\n\n# Position grasp point just below the object's top surface so that when the gripper closes,\n# the fingertip pads contact the top face.\n# fingertip point z = object top - pad thickness (0.02 m)\napproach_z = obj['pos'][2] + obj['half_height'] - 0.02\napproach_pos = [obj['pos'][0], obj['pos'][1], approach_z]\nquat = yaw_quat(0)\nmove_to(approach_pos, quat=quat)\n\n# Close the gripper to grasp the object\nclose_gripper()\n\n# Lift the object clear of the table\nlift(dz=0.2)\n\n# Move to a position just above the target marker\nrelease_pos = [tgt['pos'][0], tgt['pos'][1], tgt['pos'][2] + 0.01]\nmove_to(release_pos, quat=yaw_quat(0))\n\n# Open the gripper to release the object\nopen_gripper()\n\n# Raise the hand away from the deposited object\nlift(dz=0.2)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0148,
+       "max_rise_m": 0.19,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.3946,
+        "y": -0.0883,
+        "z": 0.261
+       },
+       "detail": "rests 0.015 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0139,
+       "max_rise_m": 0.1902,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.3946,
+        "y": -0.0883,
+        "z": 0.261
+       },
+       "detail": "rests 0.014 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5852,
+          0.0116,
+          0.2799
+         ],
+         "yaw_deg": -118.9
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.3946,
+          -0.0883,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.3,
+        "step": 129,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5852,
+          0.0116,
+          0.2849
+         ],
+         "quat": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+         ],
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.005,
+         "steps": 94,
+         "error_curve": [
+          0.064,
+          0.035,
+          0.021,
+          0.025,
+          0.021,
+          0.01
+         ],
+         "orient_err_deg": 1.5
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0115,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.9,
+        "step": 147,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0529,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.586,
+          0.011,
+          0.283
+         ],
+         "object_pos": [
+          -0.569,
+          0.007,
+          0.28
+         ],
+         "dz_m": 0.003,
+         "dxy_m": 0.017,
+         "object_top_z": 0.305,
+         "palm_z": 0.332
+        },
+        "rise_m": 0.0001,
+        "moved_xy_m": 0.0163,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.4,
+        "step": 222,
+        "call": "lift",
+        "args": {
+         "dz": 0.2
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0043,
+         "steps": 65,
+         "error_curve": [
+          0.136,
+          0.063,
+          0.022,
+          0.02
+         ],
+         "orient_err_deg": 0.8
+        },
+        "rise_m": 0.19,
+        "moved_xy_m": 0.0073,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.53,
+        "step": 346,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.3946,
+          -0.0883,
+          0.271
+         ],
+         "quat": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+         ],
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0054,
+         "steps": 114,
+         "error_curve": [
+          0.241,
+          0.167,
+          0.096,
+          0.043,
+          0.037,
+          0.034,
+          0.014
+         ],
+         "orient_err_deg": 0.9
+        },
+        "rise_m": 0.0048,
+        "moved_xy_m": 0.228,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 12.13,
+        "step": 364,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0049,
+        "moved_xy_m": 0.2278,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 14.6,
+        "step": 438,
+        "call": "lift",
+        "args": {
+         "dz": 0.2
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0044,
+         "steps": 64,
+         "error_curve": [
+          0.141,
+          0.064,
+          0.011,
+          0.011
+         ],
+         "orient_err_deg": 0.4
+        },
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.2284,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 5.3
+     }
+    ]
+   },
+   {
+    "seed": 103,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 103,
+      "condition": "physics",
+      "n": 3,
+      "code": "obj = get_object()\ntgt = get_target()\n\n# Start with the gripper fully open\nopen_gripper()\n\n# --- Grasp the object from above ---\n# 1. Move to a safe height directly above the object\nabove_obj = [obj['pos'][0], obj['pos'][1], obj['pos'][2] + obj['half_height'] + 0.1]\nmove_to(above_obj)\n\n# 2. Descend so the fingertips touch the top of the object.\n#    The fingertip point is 2\u202fcm below the pad top; placing the grasp point\n#    2\u202fcm below the object\u2019s top puts the pad top at the object surface.\ncontact_obj = [obj['pos'][0], obj['pos'][1], obj['pos'][2] + obj['half_height'] - 0.02]\nmove_to(contact_obj)\n\n# 3. Close the gripper to grasp the object\nclose_gripper()\n\n# 4. Lift the object clear of the table\nlift(0.2)\n\n# --- Place the object on the target marker ---\n# 5. Move to a safe height directly above the target marker\nabove_tgt = [tgt['pos'][0], tgt['pos'][1], tgt['pos'][2] + obj['half_height'] + 0.1]\nmove_to(above_tgt)\n\n# 6. Lower the object so its top is at the target marker height\ntarget_contact = [tgt['pos'][0], tgt['pos'][1], tgt['pos'][2] + obj['half_height']]\nmove_to(target_contact)\n\n# 7. Release the object\nopen_gripper()\n\n# 8. Let the simulation settle\nwait(0.5)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0004,
+       "max_rise_m": 0.1966,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 11,
+       "target": {
+        "x": -0.6949,
+        "y": -0.0509,
+        "z": 0.261
+       },
+       "detail": "rests 0.000 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0003,
+       "max_rise_m": 0.1966,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 11,
+       "target": {
+        "x": -0.6949,
+        "y": -0.0509,
+        "z": 0.261
+       },
+       "detail": "rests 0.000 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5021,
+          -0.0044,
+          0.2799
+         ],
+         "yaw_deg": 78.8
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.6949,
+          -0.0509,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 1.43,
+        "step": 43,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.43,
+        "step": 133,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5021,
+          -0.0044,
+          0.40490000000000004
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": false,
+         "error_m": 0.0076,
+         "steps": 90,
+         "error_curve": [
+          0.118,
+          0.088,
+          0.042,
+          0.028,
+          0.027,
+          0.008
+         ],
+         "orient_err_deg": 4.4
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 6.37,
+        "step": 191,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5021,
+          -0.0044,
+          0.2849
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0052,
+         "steps": 48,
+         "error_curve": [
+          0.05,
+          0.02,
+          0.01
+         ],
+         "orient_err_deg": 1.1
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 6.97,
+        "step": 209,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0488,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.5,
+          -0.004,
+          0.284
+         ],
+         "object_pos": [
+          -0.503,
+          -0.005,
+          0.28
+         ],
+         "dz_m": 0.004,
+         "dxy_m": 0.002,
+         "object_top_z": 0.305,
+         "palm_z": 0.333
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0008,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 9.43,
+        "step": 283,
+        "call": "lift",
+        "args": {
+         "dz": 0.2
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0049,
+         "steps": 64,
+         "error_curve": [
+          0.134,
+          0.06,
+          0.017,
+          0.014
+         ],
+         "orient_err_deg": 0.5
+        },
+        "rise_m": 0.1966,
+        "moved_xy_m": 0.003,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 12.0,
+        "step": 360,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.6949,
+          -0.0509,
+          0.386
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0056,
+         "steps": 67,
+         "error_curve": [
+          0.152,
+          0.077,
+          0.029,
+          0.031
+         ],
+         "orient_err_deg": 1.4
+        },
+        "rise_m": 0.0851,
+        "moved_xy_m": 0.2024,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 13.87,
+        "step": 416,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.6949,
+          -0.0509,
+          0.28600000000000003
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0059,
+         "steps": 46,
+         "error_curve": [
+          0.02,
+          0.01,
+          0.007
+         ],
+         "orient_err_deg": 0.1
+        },
+        "rise_m": 0.0052,
+        "moved_xy_m": 0.1981,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 14.47,
+        "step": 434,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.1981,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 14.97,
+        "step": 449,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.198,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 7.3
+     }
+    ]
+   },
+   {
+    "seed": 104,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 104,
+      "condition": "physics",
+      "n": 1,
+      "code": "obj = get_object()\ntgt = get_target()\n\nquat = yaw_quat(obj['yaw_deg'])\n\napproach_pos = [obj['pos'][0], obj['pos'][1], obj['pos'][2] + obj['half_height']]\nmove_to(approach_pos, quat=quat, timeout=4.0)\n\nclose_gripper()\nwait(0.6)\n\nlift(0.2)\nwait(0.5)\n\ntarget_pos = [tgt['pos'][0], tgt['pos'][1], tgt['pos'][2] + 0.05]\nmove_to(target_pos, quat=quat, timeout=4.0)\n\nopen_gripper()\nwait(0.6)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.001,
+       "max_rise_m": 0.1978,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 10,
+       "target": {
+        "x": -0.6259,
+        "y": -0.1196,
+        "z": 0.261
+       },
+       "detail": "rests 0.001 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.001,
+       "max_rise_m": 0.1978,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 10,
+       "target": {
+        "x": -0.6259,
+        "y": -0.1196,
+        "z": 0.261
+       },
+       "detail": "rests 0.001 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.504,
+          0.0372,
+          0.2799
+         ],
+         "yaw_deg": 83.5
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.6259,
+          -0.1196,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 2.9,
+        "step": 87,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.504,
+          0.0372,
+          0.3049
+         ],
+         "quat": [
+          -0.665882,
+          0.746057,
+          0.0,
+          0.0
+         ],
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0043,
+         "steps": 52,
+         "error_curve": [
+          0.138,
+          0.081,
+          0.027
+         ],
+         "orient_err_deg": 5.9
+        },
+        "rise_m": -0.0,
+        "moved_xy_m": 0.043,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 3.5,
+        "step": 105,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0489,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.473,
+          0.051,
+          0.282
+         ],
+         "object_pos": [
+          -0.473,
+          0.049,
+          0.282
+         ],
+         "dz_m": -0.0,
+         "dxy_m": 0.002,
+         "object_top_z": 0.307,
+         "palm_z": 0.33
+        },
+        "rise_m": 0.0019,
+        "moved_xy_m": 0.0333,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 4.1,
+        "step": 123,
+        "call": "wait",
+        "args": {
+         "seconds": 0.6
+        },
+        "result": null,
+        "rise_m": 0.0021,
+        "moved_xy_m": 0.0335,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.03,
+        "step": 211,
+        "call": "lift",
+        "args": {
+         "dz": 0.2
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0053,
+         "steps": 78,
+         "error_curve": [
+          0.158,
+          0.086,
+          0.038,
+          0.04,
+          0.009
+         ],
+         "orient_err_deg": 1.8
+        },
+        "rise_m": 0.1978,
+        "moved_xy_m": 0.0347,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.53,
+        "step": 226,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.1967,
+        "moved_xy_m": 0.0344,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 10.6,
+        "step": 318,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.6259,
+          -0.1196,
+          0.311
+         ],
+         "quat": [
+          -0.665882,
+          0.746057,
+          0.0,
+          0.0
+         ],
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0058,
+         "steps": 82,
+         "error_curve": [
+          0.223,
+          0.149,
+          0.072,
+          0.022,
+          0.021
+         ],
+         "orient_err_deg": 1.8
+        },
+        "rise_m": 0.0197,
+        "moved_xy_m": 0.199,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.2,
+        "step": 336,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.1982,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 11.8,
+        "step": 354,
+        "call": "wait",
+        "args": {
+         "seconds": 0.6
+        },
+        "result": null,
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.1981,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 6.2
+     }
+    ]
+   },
+   {
+    "seed": 105,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 105,
+      "condition": "physics",
+      "n": 3,
+      "code": "obj = get_object()\ntgt = get_target()\nop = obj['pos']\noh = obj['half_height']\ntp = tgt['pos']\n\n# Move grasp point to object centre height so close_gripper contacts the object\nmove_to([op[0], op[1], op[2]])\nclose_gripper()\n\n# Lift the object clear of the table\nlift(0.15)\n\n# Move to target position, lowering object onto the table\n# Object centre should be at table height + half its height\nmove_to([tp[0], tp[1], tp[2] + oh])\n\n# Release the object onto the target marker\nopen_gripper()\n\nwait(0.5)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0171,
+       "max_rise_m": 0.1437,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.6669,
+        "y": 0.116,
+        "z": 0.261
+       },
+       "detail": "rests 0.017 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0171,
+       "max_rise_m": 0.1437,
+       "final_rise_m": 0.0057,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.6669,
+        "y": 0.116,
+        "z": 0.261
+       },
+       "detail": "rests 0.017 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5122,
+          -0.0151,
+          0.2799
+         ],
+         "yaw_deg": 104.7
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.6669,
+          0.116,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 3.93,
+        "step": 118,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5122,
+          -0.0151,
+          0.2799
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": false,
+         "error_m": 0.0061,
+         "steps": 93,
+         "error_curve": [
+          0.054,
+          0.034,
+          0.014,
+          0.018,
+          0.016,
+          0.01
+         ],
+         "orient_err_deg": 1.9
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0111,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.53,
+        "step": 136,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0488,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.511,
+          -0.015,
+          0.277
+         ],
+         "object_pos": [
+          -0.5,
+          -0.015,
+          0.281
+         ],
+         "dz_m": -0.004,
+         "dxy_m": 0.011,
+         "object_top_z": 0.306,
+         "palm_z": 0.325
+        },
+        "rise_m": 0.0006,
+        "moved_xy_m": 0.0118,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.0,
+        "step": 210,
+        "call": "lift",
+        "args": {
+         "dz": 0.15
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0042,
+         "steps": 64,
+         "error_curve": [
+          0.088,
+          0.02,
+          0.012,
+          0.012
+         ],
+         "orient_err_deg": 0.7
+        },
+        "rise_m": 0.1437,
+        "moved_xy_m": 0.0083,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 10.6,
+        "step": 318,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.6669,
+          0.116,
+          0.28600000000000003
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0059,
+         "steps": 98,
+         "error_curve": [
+          0.179,
+          0.104,
+          0.036,
+          0.014,
+          0.014,
+          0.013
+         ],
+         "orient_err_deg": 1.3
+        },
+        "rise_m": 0.0085,
+        "moved_xy_m": 0.1882,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.2,
+        "step": 336,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.1901,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 11.7,
+        "step": 351,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.0057,
+        "moved_xy_m": 0.1901,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 7.0
+     }
+    ]
+   },
+   {
+    "seed": 106,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 106,
+      "condition": "physics",
+      "n": 2,
+      "code": "obj = get_object()\ntgt = get_target()\nobj_pos = obj['pos']\nobj_half = obj['half_height']\nobj_top = obj_pos[2] + obj_half\ntgt_pos = tgt['pos']\n\n# Pick up object: position grasp point at the object's top surface,\n# close the gripper, then lift clear of the table.\nmove_to([obj_pos[0], obj_pos[1], obj_top], quat=None, timeout=4.0)\nclose_gripper()\nlift(dz=0.2, timeout=4.0)\n\n# Place object on the target marker: lower it so its bottom rests on the table\n# (table top at z = 0.255) and open the gripper to release it.\nplace_z = 0.255 + obj_half\nmove_to([tgt_pos[0], tgt_pos[1], place_z], quat=None, timeout=4.0)\nopen_gripper()\nwait(0.5)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.023,
+       "max_rise_m": 0.1968,
+       "final_rise_m": 0.0053,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.6502,
+        "y": -0.0945,
+        "z": 0.261
+       },
+       "detail": "rests 0.023 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0231,
+       "max_rise_m": 0.1968,
+       "final_rise_m": 0.0053,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 8,
+       "target": {
+        "x": -0.6502,
+        "y": -0.0945,
+        "z": 0.261
+       },
+       "detail": "rests 0.023 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5289,
+          0.0401,
+          0.2799
+         ],
+         "yaw_deg": -174.0
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 0.83,
+        "step": 25,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.6502,
+          -0.0945,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 3.37,
+        "step": 101,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5289,
+          0.0401,
+          0.3049
+         ],
+         "quat": null,
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0048,
+         "steps": 66,
+         "error_curve": [
+          0.05,
+          0.043,
+          0.038,
+          0.017
+         ],
+         "orient_err_deg": 2.4
+        },
+        "rise_m": -0.0,
+        "moved_xy_m": 0.0009,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 3.97,
+        "step": 119,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0488,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.526,
+          0.04,
+          0.301
+         ],
+         "object_pos": [
+          -0.528,
+          0.04,
+          0.28
+         ],
+         "dz_m": 0.021,
+         "dxy_m": 0.001,
+         "object_top_z": 0.305,
+         "palm_z": 0.35
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0011,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 6.43,
+        "step": 193,
+        "call": "lift",
+        "args": {
+         "dz": 0.2
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0058,
+         "steps": 64,
+         "error_curve": [
+          0.139,
+          0.066,
+          0.018,
+          0.016
+         ],
+         "orient_err_deg": 1.2
+        },
+        "rise_m": 0.1968,
+        "moved_xy_m": 0.0008,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 9.5,
+        "step": 285,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.6502,
+          -0.0945,
+          0.28
+         ],
+         "quat": null,
+         "timeout": 4.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.006,
+         "steps": 82,
+         "error_curve": [
+          0.219,
+          0.145,
+          0.071,
+          0.019,
+          0.011
+         ],
+         "orient_err_deg": 0.9
+        },
+        "rise_m": 0.0052,
+        "moved_xy_m": 0.1672,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 10.1,
+        "step": 303,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0053,
+        "moved_xy_m": 0.1678,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 10.6,
+        "step": 318,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.0053,
+        "moved_xy_m": 0.1678,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 6.5
+     }
+    ]
+   },
+   {
+    "seed": 107,
+    "success": true,
+    "attempts": [
+     {
+      "seed": 107,
+      "condition": "physics",
+      "n": 1,
+      "code": "open_gripper()\nobj = get_object()\nop = obj['pos']\ntg = get_target()\ntp = tg['pos']\n\nmove_to(op)\nclose_gripper()\nlift(0.15)\nmove_to([tp[0], tp[1], 0.27])\nopen_gripper()\nwait(0.5)",
+      "verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0056,
+       "max_rise_m": 0.1439,
+       "final_rise_m": 0.0051,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 9,
+       "target": {
+        "x": -0.4725,
+        "y": -0.1233,
+        "z": 0.261
+       },
+       "detail": "rests 0.006 m from the target, released"
+      },
+      "recorded_verdict": {
+       "success": true,
+       "failure": null,
+       "final_dist_m": 0.0056,
+       "max_rise_m": 0.1439,
+       "final_rise_m": 0.0051,
+       "gripper_closed": false,
+       "contacts": {
+        "left": false,
+        "right": false
+       },
+       "n_calls": 9,
+       "target": {
+        "x": -0.4725,
+        "y": -0.1233,
+        "z": 0.261
+       },
+       "detail": "rests 0.006 m from the target, released"
+      },
+      "same_outcome": true,
+      "trace": [
+       {
+        "t": 1.43,
+        "step": 43,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 1.43,
+        "step": 43,
+        "call": "get_object",
+        "args": {},
+        "result": {
+         "shape": "cube",
+         "size_xyz": [
+          0.05,
+          0.05,
+          0.05
+         ],
+         "half_height": 0.025,
+         "narrow_width": 0.05,
+         "pos": [
+          -0.5754,
+          0.0081,
+          0.2799
+         ],
+         "yaw_deg": 170.0
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 1.43,
+        "step": 43,
+        "call": "get_target",
+        "args": {},
+        "result": {
+         "pos": [
+          -0.4725,
+          -0.1233,
+          0.261
+         ],
+         "radius": 0.03
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 4.87,
+        "step": 146,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.5754,
+          0.0081,
+          0.2799
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": false,
+         "error_m": 0.0085,
+         "steps": 103,
+         "error_curve": [
+          0.06,
+          0.036,
+          0.018,
+          0.02,
+          0.017,
+          0.014
+         ],
+         "orient_err_deg": 2.3
+        },
+        "rise_m": -0.0,
+        "moved_xy_m": 0.0099,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 5.47,
+        "step": 164,
+        "call": "close_gripper",
+        "args": {},
+        "result": {
+         "width": 0.0488,
+         "contacts": {
+          "left": true,
+          "right": true
+         },
+         "fingertip_pos": [
+          -0.572,
+          0.008,
+          0.272
+         ],
+         "object_pos": [
+          -0.566,
+          0.008,
+          0.28
+         ],
+         "dz_m": -0.008,
+         "dxy_m": 0.006,
+         "object_top_z": 0.305,
+         "palm_z": 0.32
+        },
+        "rise_m": 0.0,
+        "moved_xy_m": 0.0091,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 7.97,
+        "step": 239,
+        "call": "lift",
+        "args": {
+         "dz": 0.15
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0039,
+         "steps": 65,
+         "error_curve": [
+          0.094,
+          0.023,
+          0.015,
+          0.014
+         ],
+         "orient_err_deg": 1.2
+        },
+        "rise_m": 0.1439,
+        "moved_xy_m": 0.0067,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.0,
+        "step": 330,
+        "call": "move_to",
+        "args": {
+         "pos": [
+          -0.4725,
+          -0.1233,
+          0.27
+         ],
+         "quat": null,
+         "timeout": 3.0
+        },
+        "result": {
+         "reached": true,
+         "error_m": 0.0059,
+         "steps": 81,
+         "error_curve": [
+          0.157,
+          0.083,
+          0.024,
+          0.018,
+          0.008
+         ],
+         "orient_err_deg": 0.8
+        },
+        "rise_m": 0.0051,
+        "moved_xy_m": 0.1708,
+        "contacts": {
+         "left": true,
+         "right": true
+        }
+       },
+       {
+        "t": 11.6,
+        "step": 348,
+        "call": "open_gripper",
+        "args": {},
+        "result": {
+         "width": 0.08
+        },
+        "rise_m": 0.0051,
+        "moved_xy_m": 0.171,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       },
+       {
+        "t": 12.1,
+        "step": 363,
+        "call": "wait",
+        "args": {
+         "seconds": 0.5
+        },
+        "result": null,
+        "rise_m": 0.0051,
+        "moved_xy_m": 0.171,
+        "contacts": {
+         "left": false,
+         "right": false
+        }
+       }
+      ],
+      "wall_s": 7.3
+     }
+    ]
+   }
+  ]
+ }
+}

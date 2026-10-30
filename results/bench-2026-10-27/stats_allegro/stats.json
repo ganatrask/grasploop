@@ -1,0 +1,230 @@
+{
+ "script": "eval/stats.py",
+ "inputs": [
+  {
+   "file": "allegro_cube.json",
+   "robot": "allegro",
+   "shape": "cube",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "reasoning": "default",
+   "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "wall_s": 3035.1,
+   "cost_usd": 0.2121
+  }
+ ],
+ "scenarios": 8,
+ "conditions": {
+  "scripted": {
+   "label": "A scripted reference",
+   "n": 8,
+   "successes": 7,
+   "rate": 0.875,
+   "ci95": [
+    0.529,
+    0.978
+   ],
+   "first_attempt": 7,
+   "first_rate": 0.875,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": 0.0,
+   "mean_wall_s": 4.5,
+   "failures": {
+    "ik_not_reached": 1
+   }
+  },
+  "oneshot": {
+   "label": "B one-shot",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 1.0,
+   "cost_usd": 0.017,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 56.9,
+   "failures": {
+    "object_missed": 7,
+    "ik_not_reached": 1
+   }
+  },
+  "rerun": {
+   "label": "C0 rerun, no repair",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 3.0,
+   "cost_usd": 0.0,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 8.5,
+   "failures": {
+    "object_missed": 7,
+    "ik_not_reached": 1
+   }
+  },
+  "physics": {
+   "label": "C physics feedback",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 3.0,
+   "cost_usd": 0.0511,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 146.0,
+   "failures": {
+    "object_missed": 8
+   }
+  },
+  "vision": {
+   "label": "D physics + vision",
+   "n": 8,
+   "successes": 0,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.324
+   ],
+   "first_attempt": 0,
+   "first_rate": 0.0,
+   "recovered_attempt2": 0,
+   "recovered_attempt3": 0,
+   "recovery_rate": 0.0,
+   "mean_attempts": 3.0,
+   "cost_usd": 0.062,
+   "cost_per_success_usd": null,
+   "mean_wall_s": 136.2,
+   "failures": {
+    "object_missed": 7,
+    "ik_not_reached": 1
+   }
+  }
+ },
+ "paired": [
+  {
+   "a": "physics",
+   "b": "oneshot",
+   "n": 8,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "a_only": 0,
+   "b_only": 0,
+   "both": 0,
+   "neither": 8,
+   "separated": false
+  },
+  {
+   "a": "vision",
+   "b": "oneshot",
+   "n": 8,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "a_only": 0,
+   "b_only": 0,
+   "both": 0,
+   "neither": 8,
+   "separated": false
+  },
+  {
+   "a": "physics",
+   "b": "rerun",
+   "n": 8,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "a_only": 0,
+   "b_only": 0,
+   "both": 0,
+   "neither": 8,
+   "separated": false
+  },
+  {
+   "a": "vision",
+   "b": "physics",
+   "n": 8,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "a_only": 0,
+   "b_only": 0,
+   "both": 0,
+   "neither": 8,
+   "separated": false
+  }
+ ],
+ "reviewer": {
+  "n": 88,
+  "agree": 88,
+  "agreement": 1.0,
+  "false_positive": 0,
+  "false_negative": 0,
+  "abstain": 0,
+  "invalid_json": 0,
+  "cost_usd": 0.082,
+  "failure_pairs": {
+   "object_missed / closed_on_nothing": 46,
+   "object_missed / no_lift_attempted": 15,
+   "object_missed / object_pushed_away": 7,
+   "ik_not_reached / closed_on_nothing": 5,
+   "ik_not_reached / no_lift_attempted": 4,
+   "object_missed / object_dropped": 3,
+   "insufficient_lift / object_pushed_away": 1
+  }
+ },
+ "per_shape": {
+  "allegro/cube": {
+   "scripted": "7/8",
+   "oneshot": "0/8",
+   "rerun": "0/8",
+   "physics": "0/8",
+   "vision": "0/8"
+  }
+ }
+}
