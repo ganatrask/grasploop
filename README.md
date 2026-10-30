@@ -2,6 +2,10 @@
 
 **An AI robotics engineer that writes, watches, tests and repairs its own robot code: grasping, placing and walking, on an arm, a dexterous hand, a quadruped and a humanoid.**
 
+![Franka, cube, seed 100: attempt 1 closes above the cube and fails; attempt 2, repaired from the physics judge's measurements and the reviewer's diagnosis, lifts and holds it](docs/media/cube_attempt1_fail_attempt2_pass.gif)
+
+*Attempt 1 fails, the judge says why in centimetres, attempt 2 lifts. Frames from the demo cut; the small window is the reviewer's camera.*
+
 Give it a robot, an object and a sentence ("pick up the object from the table and hold it in the
 air"). NVIDIA **Nemotron 3.5 Lightning**, served by **Nebius Token Factory**, writes a short Python
 program against a 12-call grasp API. **Isaac Lab 3.0 GA** runs it on **Newton** physics without Isaac
@@ -97,6 +101,14 @@ the recorder, the clips and the demo cut are shared. Built on NVIDIA's kit-less 
 | Kuka iiwa + Allegro | pick up and hold, cube | IK on link 7 + finger postures | 7/8 | 0/8 | 0/8 | 0/8 |
 | **Unitree Go2** quadruped | **navigate**: waypoint, then goal | NVIDIA RSL-RL policy trained on Newton in 8 min | 8/8 | 4/8 | 4/8 | 6/8 |
 | **Unitree G1** humanoid | **navigate**: waypoint, then goal | NVIDIA RSL-RL policy trained on Newton in 36 min | 8/8 | 2/8 | 2/8 | 6/8 |
+
+| Go2 arriving at the goal, physics feedback | four Go2 seeds, four repaired programs | G1 humanoid arriving at the goal |
+|---|---|---|
+| ![Go2 arriving](docs/media/go2_arrival.gif) | ![four Go2 seeds](docs/media/go2_four_seeds.gif) | ![G1 arriving](docs/media/g1_arrival.gif) |
+| **Franka places the cube on the target disc** | **four place seeds** | **the cube cell on the Nebius H100, OVRTX path-traced** |
+| ![cube placed](docs/media/franka_place_cube.gif) | ![four place seeds](docs/media/place_four_seeds.gif) | ![H100 cube](docs/media/nebius_h100_cube.gif) |
+
+*Every clip is an attempt from the records in `results/`, filmed as it ran; the chips are the judge's verdicts.*
 
 Eight matched seeds per cell, three attempts, Lightning with thinking; the walkers' and place cells
 were run overnight 2026-10-29 (`docs/03-robots-x-tasks.md` §3, records in
